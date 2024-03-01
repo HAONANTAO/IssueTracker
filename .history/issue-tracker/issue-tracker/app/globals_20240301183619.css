@@ -13,7 +13,7 @@
 }
 
 body {
-  color: black;
+  color: rgb(var(--foreground-rgb));
 }
 
 @layer utilities {
