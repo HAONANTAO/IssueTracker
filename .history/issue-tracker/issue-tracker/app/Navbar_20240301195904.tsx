@@ -11,14 +11,10 @@ const Navbar = () => {
         </Link>
         <ul className="flex space-x-4 ">
           <li>
-            <Link href="/" className="text-zinc-400 hover:text-zinc-600">
-              Dashboard
-            </Link>
+            <Link href="/">Dashboard</Link>
           </li>
           <li>
-            <Link href="/issue" className="text-zinc-400 hover:text-zinc-600">
-              Issue
-            </Link>
+            <Link href="/issue">Issue</Link>
           </li>
         </ul>
       </nav>

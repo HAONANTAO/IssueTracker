@@ -16,9 +16,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link href="/issue" className="text-zinc-400 hover:text-zinc-600">
-              Issue
-            </Link>
+            <Link href="/issue">Issue</Link>
           </li>
         </ul>
       </nav>
