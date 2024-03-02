@@ -7,7 +7,7 @@ import "easymde/dist/easymde.min.css";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 interface issueForm {
   title: string;
-  description: string;
+  description: String;
 }
 
 const NewIssue = () => {

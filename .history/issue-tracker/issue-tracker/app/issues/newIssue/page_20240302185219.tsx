@@ -4,10 +4,10 @@ import React from "react";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 
-import { useForm, SubmitHandler, Controller } from "react-hook-form";
+import { useForm, SubmitHandler } from "react-hook-form";
 interface issueForm {
-  title: string;
-  description: string;
+  title: String;
+  description: String;
 }
 
 const NewIssue = () => {
@@ -15,7 +15,6 @@ const NewIssue = () => {
     register,
     handleSubmit,
     watch,
-    control,
     formState: { errors },
   } = useForm<issueForm>();
   console.log(register("title"));
@@ -27,17 +26,7 @@ const NewIssue = () => {
           placeholder="Input the Issue Title here..."
           {...register("title")}
         />
-        <Controller
-          name="description"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <SimpleMDE
-              placeholder="Input the Issue Description here..."
-              {...field}
-            />
-          )}
-        />
+        <SimpleMDE placeholder="Input the Issue Description here..." />
         <Button>Create New Issue</Button>
       </form>
     </>

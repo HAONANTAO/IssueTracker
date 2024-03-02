@@ -6,8 +6,8 @@ import "easymde/dist/easymde.min.css";
 
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
 interface issueForm {
-  title: string;
-  description: string;
+  title: String;
+  description: String;
 }
 
 const NewIssue = () => {
@@ -31,12 +31,12 @@ const NewIssue = () => {
           name="description"
           control={control}
           defaultValue=""
-          render={({ field }) => (
+          render={({ field }) => 
             <SimpleMDE
-              placeholder="Input the Issue Description here..."
               {...field}
+              placeholder="Input the Issue Description here..."
             />
-          )}
+         }
         />
         <Button>Create New Issue</Button>
       </form>
