@@ -12,6 +12,4 @@ export async function POST(request: NextRequest) {
   if (!validation.success) {
     return NextResponse.json(validation.error.errors);
   }
-
-  return NextResponse.json(<span>validation successfully!</span>);
 }
