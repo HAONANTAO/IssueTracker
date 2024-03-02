@@ -13,15 +13,8 @@ const Navbar = () => {
           {/* import he bug logo into the navbar */}
           <FaBug />
         </Link>
-        <ul className="flex space-x-4 ">
-          {link.map((l) => (
-            <li>
-              <Link href={l.href} className="text-zinc-400 hover:text-zinc-600">
-                {l.label}
-              </Link>
-            </li>
-          ))}
-          {/* <li>
+        {/* <ul className="flex space-x-4 ">
+          <li>
             <Link href="/" className="text-zinc-400 hover:text-zinc-600">
               Dashboard
             </Link>

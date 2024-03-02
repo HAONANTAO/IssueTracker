@@ -14,14 +14,7 @@ const Navbar = () => {
           <FaBug />
         </Link>
         <ul className="flex space-x-4 ">
-          {link.map((l) => (
-            <li>
-              <Link href={l.href} className="text-zinc-400 hover:text-zinc-600">
-                {l.label}
-              </Link>
-            </li>
-          ))}
-          {/* <li>
+          <li>
             <Link href="/" className="text-zinc-400 hover:text-zinc-600">
               Dashboard
             </Link>
@@ -30,7 +23,7 @@ const Navbar = () => {
             <Link href="/issue" className="text-zinc-400 hover:text-zinc-600">
               Issue
             </Link>
-          </li> */}
+          </li>
         </ul>
       </nav>
     </>

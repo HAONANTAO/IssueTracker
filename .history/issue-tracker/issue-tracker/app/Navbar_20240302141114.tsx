@@ -2,10 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FaBug } from "react-icons/fa6";
 const Navbar = () => {
-  const link = [
-    { label: "Dashboard", href: "/" },
-    { label: "Issue", href: "/issue" },
-  ];
+  const link = [{ label: "Dashboard",href=""}];
   return (
     <>
       <nav className="flex  border-b space-x-4 px-2 py-2 mb-2 items-center">
@@ -14,14 +11,7 @@ const Navbar = () => {
           <FaBug />
         </Link>
         <ul className="flex space-x-4 ">
-          {link.map((l) => (
-            <li>
-              <Link href={l.href} className="text-zinc-400 hover:text-zinc-600">
-                {l.label}
-              </Link>
-            </li>
-          ))}
-          {/* <li>
+          <li>
             <Link href="/" className="text-zinc-400 hover:text-zinc-600">
               Dashboard
             </Link>
@@ -30,7 +20,7 @@ const Navbar = () => {
             <Link href="/issue" className="text-zinc-400 hover:text-zinc-600">
               Issue
             </Link>
-          </li> */}
+          </li>
         </ul>
       </nav>
     </>
