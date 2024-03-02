@@ -5,15 +5,12 @@ import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import axios from "axios";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
-// works in app router
-import { useRouter } from "next/navigation";
 interface issueForm {
   title: string;
   description: string;
 }
 
 const NewIssue = () => {
-  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -22,13 +19,15 @@ const NewIssue = () => {
     formState: { errors },
   } = useForm<issueForm>();
 
+  const issueSubmit = ()=>{
+    
+  }
   return (
     <>
       <form
-        onSubmit={handleSubmit(async (data) => {
-          await axios.post("/api/issues", data);
-          router.push("/issues");
-        })}
+        onSubmit={handleSubmit(
+          async (data) => await axios.post("/api/issues", data),
+        )}
         className="flex flex-col space-y-2 space-x-4 max-w-xl">
         <h1 className="">NewIssue</h1>
         <TextField.Input
