@@ -23,8 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.variable}>
+    <html lang="en" className={inter.variable}>
+      <body>
         <Theme>
           <Navbar></Navbar>
           {/* moving the children into the main part, more semantic */}

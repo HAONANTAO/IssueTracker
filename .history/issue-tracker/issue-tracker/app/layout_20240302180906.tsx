@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "./theme"
 import "./globals.css";
-import "./theme-config.css";
 import Navbar from "./Navbar";
 // import radix ui
 import "@radix-ui/themes/styles.css";
-import { Theme } from "@radix-ui/themes";
-
+import { Theme, ThemePanel } from "@radix-ui/themes";
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -25,7 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-        <Theme>
+        <Theme appearance="light" accentColor="purple">
           <Navbar></Navbar>
           {/* moving the children into the main part, more semantic */}
           <main> {children}</main>

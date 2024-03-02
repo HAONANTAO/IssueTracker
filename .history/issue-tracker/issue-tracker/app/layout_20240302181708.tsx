@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import "./theme-config.css";
 import Navbar from "./Navbar";
 // import radix ui
 import "@radix-ui/themes/styles.css";
@@ -23,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.variable}>
+    <html lang="en" className={inter.variable}>
+      <body>
         <Theme>
           <Navbar></Navbar>
           {/* moving the children into the main part, more semantic */}
