@@ -18,8 +18,5 @@ export async function POST(request: NextRequest) {
   const createIssue = await prisma.issue.create({
     data: { title: body.title, description: body.description },
   });
-  return NextResponse.json({
-    message: "Validation successfully!",
-    createIssue,
-  });
+  return NextResponse.json({ message: "Validation successfully!" });
 }
