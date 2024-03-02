@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import React from "react";
 import { FaBug } from "react-icons/fa6";
@@ -9,7 +8,7 @@ const Navbar = () => {
     { label: "Dashboard", href: "/" },
     { label: "Issue", href: "/issue" },
   ];
-  const currentPath = usePathname();
+  const;
   return (
     <>
       <nav className="flex  border-b space-x-4 px-2 py-2 mb-2 items-center">
