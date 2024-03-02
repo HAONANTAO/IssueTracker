@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 // use `prisma` in your application to read and write data in your DB
 const schema = z.object({
   title: z.string().min(2).max(255),
-  description: z.string().min(2),
+  description: z.string().min(1),
 });
 
 export async function POST(request: NextRequest) {
@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
   // zod for validation
   const validation = schema.safeParse(body);
   if (!validation.success) {
-    return NextResponse.json(validation.error.errors, { status: 400 });
+    return NextResponse.json(validation.error.errors);
   }
   console.log(validation);
   const createIssue = await prisma.issue.create({
