@@ -6,7 +6,7 @@ const Issue = () => {
     <>
       <div>Issue</div>
       <Button>
-        <a href="/newIssue">Create New Issue</a>
+        <a href=""></a>
       </Button>
     </>
   );

@@ -5,9 +5,7 @@ const Issue = () => {
   return (
     <>
       <div>Issue</div>
-      <Button>
-        <a href="/newIssue">Create New Issue</a>
-      </Button>
+      <Button></Button>
     </>
   );
 };
