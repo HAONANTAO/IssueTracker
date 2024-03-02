@@ -3,8 +3,8 @@ import React from "react";
 
 const IssuePage = () => {
   return (
-    <div className="flex space-x-3 mx-3 px-3">
-      <span>IssuePage</span>
+    <div className="">
+      IssuePage
       <Button size="3" variant="soft">
         Testing
       </Button>

@@ -3,10 +3,10 @@ import React from "react";
 
 const IssuePage = () => {
   return (
-    <div className="flex space-x-3 mx-3 px-3">
-      <span>IssuePage</span>
-      <Button size="3" variant="soft">
-        Testing
+    <div>
+      IssuePage
+      <Button>
+        <BookmarkIcon width="16" height="16" /> Bookmark
       </Button>
     </div>
   );
