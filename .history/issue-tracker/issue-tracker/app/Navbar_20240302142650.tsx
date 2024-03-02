@@ -15,7 +15,7 @@ const Navbar = () => {
         </Link>
         <ul className="flex space-x-4 ">
           {link.map((l) => (
-            <li key={l.label}>
+            <li key={}>
               <Link href={l.href} className="text-zinc-400 hover:text-zinc-600">
                 {l.label}
               </Link>
