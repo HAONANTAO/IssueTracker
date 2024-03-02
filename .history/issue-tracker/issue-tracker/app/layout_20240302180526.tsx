@@ -24,7 +24,7 @@ export default function RootLayout({
         <Theme appearance="light" accentColor="purple">
           <Navbar></Navbar>
           {/* moving the children into the main part, more semantic */}
-          <main> {children}</main>
+          <main> {children}</main> <ThemePanel></ThemePanel>
         </Theme>
       </body>
     </html>

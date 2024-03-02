@@ -21,11 +21,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Theme appearance="light" accentColor="purple">
+        <Theme>
           <Navbar></Navbar>
           {/* moving the children into the main part, more semantic */}
           <main> {children}</main>
         </Theme>
+        <ThemePanel></ThemePanel>
       </body>
     </html>
   );
