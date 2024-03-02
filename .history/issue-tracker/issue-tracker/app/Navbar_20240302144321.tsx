@@ -11,6 +11,10 @@ const Navbar = () => {
   ];
   const currentPath = usePathname();
   console.log(currentPath);
+  function classnames(arg0: { "text-zinc-800": boolean; "text-zinc-400": boolean; "hover:text-zinc-600": boolean; }): string | undefined {
+    throw new Error("Function not implemented.");
+  }
+
   return (
     <>
       <nav className="flex  border-b space-x-4 px-2 py-2 mb-2 items-center">
@@ -23,9 +27,11 @@ const Navbar = () => {
             <li key={l.label}>
               <Link
                 href={l.href}
-                className={`hover:text-zinc-600 transition-colors ${
-                  currentPath === l.href ? "text-zinc-800" : "text-zinc-400"
-                }`}>
+                className={classnames({
+                  "text-zinc-800": currentPath === l.href,
+                  "text-zinc-400": currentPath !== l.href,
+                  "hover:text-zinc-600": true,
+                })}>
                 {l.label}
               </Link>
             </li>

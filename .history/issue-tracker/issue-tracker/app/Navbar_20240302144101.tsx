@@ -21,11 +21,8 @@ const Navbar = () => {
         <ul className="flex space-x-4 ">
           {link.map((l) => (
             <li key={l.label}>
-              <Link
-                href={l.href}
-                className={`hover:text-zinc-600 transition-colors ${
-                  currentPath === l.href ? "text-zinc-800" : "text-zinc-400"
-                }`}>
+              <Link href={l.href} 
+              className={}>
                 {l.label}
               </Link>
             </li>
