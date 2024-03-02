@@ -18,7 +18,7 @@ const NewIssue = () => {
     control,
     formState: { errors },
   } = useForm<issueForm>();
-
+  console.log(register("title"));
   return (
     <>
       <form

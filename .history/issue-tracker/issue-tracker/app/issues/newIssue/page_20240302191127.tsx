@@ -18,12 +18,10 @@ const NewIssue = () => {
     control,
     formState: { errors },
   } = useForm<issueForm>();
-
+  console.log(register("title"));
   return (
     <>
-      <form
-        onSubmit={handleSubmit((data) => console.log(data))}
-        className="flex flex-col space-y-2 space-x-4 max-w-xl">
+      <form onSUclassName="flex flex-col space-y-2 space-x-4 max-w-xl">
         <h1 className="">NewIssue</h1>
         <TextField.Input
           placeholder="Input the Issue Title here..."
