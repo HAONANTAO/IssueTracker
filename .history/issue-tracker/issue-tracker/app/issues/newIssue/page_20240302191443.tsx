@@ -22,8 +22,8 @@ const NewIssue = () => {
   return (
     <>
       <form
-        onSubmit={handleSubmit(
-          async (data) => await axios.post("/api/issues", data),
+        onSubmit={handleSubmit(async (data) =>
+          awaitaxios.post("/api/issues", data),
         )}
         className="flex flex-col space-y-2 space-x-4 max-w-xl">
         <h1 className="">NewIssue</h1>
