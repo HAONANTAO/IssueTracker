@@ -21,11 +21,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Theme>
-          <Navbar></Navbar>
-          {/* moving the children into the main part, more semantic */}
-          <main> {children}</main>
-        </Theme>
+        <Theme></Theme>
+        <Navbar></Navbar>
+        {/* moving the children into the main part, more semantic */}
+        <main> {children}</main>
       </body>
     </html>
   );
