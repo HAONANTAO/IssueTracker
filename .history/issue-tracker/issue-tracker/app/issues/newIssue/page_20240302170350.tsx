@@ -7,8 +7,8 @@ const NewIssue = () => {
     <>
       <div>
         <span className="">NewIssue</span>
-        <TextField.Input placeholder="Input the Issue Title here..." />
-        <TextArea placeholder="Input the Issue Description here..." />
+        <TextField.Input placeholder="Input the Issue Title" />
+        <TextArea placeholder="Reply to comment…" />
       </div>
     </>
   );
