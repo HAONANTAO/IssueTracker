@@ -10,7 +10,7 @@ const NewIssue = () => {
       <div className="flex flex-col space-y-2 space-x-4 max-w-xl">
         <h1 className="">NewIssue</h1>
         <TextField.Input placeholder="Input the Issue Title here..." />
-        <SimpleMDE placeholder="Input the Issue Description here..." />
+        <<SimpleMDE /> placeholder="Input the Issue Description here..." />
         <Button>Create New Issue</Button>
       </div>
     </>
