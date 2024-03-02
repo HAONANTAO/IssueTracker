@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { FaBug } from "react-icons/fa6";
-import { usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";}
 const Navbar = () => {
   const link = [
     { label: "Dashboard", href: "/" },
