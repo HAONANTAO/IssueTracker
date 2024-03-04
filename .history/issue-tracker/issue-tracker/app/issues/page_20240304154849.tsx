@@ -23,31 +23,20 @@ const IssuesPage = async () => {
         <Link href="/newIssue">Create New Issue</Link>
       </Button>
       <TableRoot variant="surface">
-        <TableHeader>
+        <TableHeader className="md:hidden">
           <TableRow>
             <TableColumnHeaderCell>Issue</TableColumnHeaderCell>
-            <TableColumnHeaderCell className="hidden md:table-cell">
-              Status
-            </TableColumnHeaderCell>
-            <TableColumnHeaderCell className="hidden md:table-cell">
-              CreateAt
-            </TableColumnHeaderCell>
-            <TableColumnHeaderCell className="hidden md:table-cell">
-              Description
-            </TableColumnHeaderCell>
+            <TableColumnHeaderCell>Status</TableColumnHeaderCell>
+            <TableCell>CreateAt</TableCell> <TableCell>Description</TableCell>
           </TableRow>
         </TableHeader>
         {issues.map((i) => (
           <TableBody>
             <TableRow>
               <TableCell>{i.id}</TableCell>
-              <TableCell className="hidden md:table-cell">{i.status}</TableCell>
-              <TableCell className="hidden md:table-cell">
-                {i.createdAt.toDateString()}
-              </TableCell>
-              <TableCell className="hidden md:table-cell">
-                {i.description}
-              </TableCell>
+              <TableCell>{i.status}</TableCell>
+              <TableCell>{i.createdAt.toDateString()}</TableCell>
+              <TableCell>{i.description}</TableCell>
             </TableRow>
           </TableBody>
         ))}
