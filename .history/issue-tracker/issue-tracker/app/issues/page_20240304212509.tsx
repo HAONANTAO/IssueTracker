@@ -46,7 +46,7 @@ const IssuesPage = async () => {
           <TableBody>
             <TableRow>
               <TableCell className="hidden md:table-cell">
-                <Link href={`/issues/${i.id}`}>{i.id}</Link>
+                <Link href="/issues/:id"></Link>
               </TableCell>
               <TableCell>
                 {i.title}
