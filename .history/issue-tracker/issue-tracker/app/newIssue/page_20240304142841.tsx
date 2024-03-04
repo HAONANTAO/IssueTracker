@@ -50,7 +50,7 @@ const NewIssue = () => {
           placeholder="Input the Issue Title here..."
           {...register("title")}
         />
-        {<ErrorMessage>{errors.title?.message}</ErrorMessage>}
+        {<ErrorMessage>{errors.title.message}</ErrorMessage>}
         <Controller
           name="description"
           control={control}
@@ -62,8 +62,9 @@ const NewIssue = () => {
             />
           )}
         />
-        {<ErrorMessage>{errors.title?.message}</ErrorMessage>}
-
+        { 
+          <ErrorMessage>{errors.title?.message}</ErrorMessage>}
+}
         <Button>Create New Issue</Button>
       </form>
     </div>
