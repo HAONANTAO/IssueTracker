@@ -65,7 +65,7 @@ const NewIssue = () => {
         />
         {<ErrorMessage>{errors.title?.message}</ErrorMessage>}
 
-        <Button disabled={loading}>
+        <Button disabled>
           Create New Issue
           {loading && <Spinner />}
         </Button>

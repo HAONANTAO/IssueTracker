@@ -26,7 +26,7 @@ const NewIssue = () => {
     resolver: zodResolver(ValidationSchema),
   });
   const [eerror, setEerror] = useState("");
-  const [loading, Setloading] = useState(false);
+  const
   return (
     <div className="max-w-xl">
       {eerror && (
@@ -65,9 +65,8 @@ const NewIssue = () => {
         />
         {<ErrorMessage>{errors.title?.message}</ErrorMessage>}
 
-        <Button disabled={loading}>
-          Create New Issue
-          {loading && <Spinner />}
+        <Button>
+          Create New Issue <Spinner />
         </Button>
       </form>
     </div>
