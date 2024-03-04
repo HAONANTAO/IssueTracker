@@ -10,8 +10,11 @@ import { useRouter } from "next/navigation";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ValidationSchema } from "../ValidationSchema";
-
-type issueForm = z.infer<typeof ValidationSchema>;
+interface issueForm {
+  title: string;
+  description: string;
+}
+type z.infer<typeof ValidationSchema>;
 const NewIssue = () => {
   const router = useRouter();
   const {
