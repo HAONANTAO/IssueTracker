@@ -42,7 +42,7 @@ const IssuesPage = async () => {
             <TableRow>
               <TableCell>
                 {i.title}
-                <div className="block md:hidden">{i.status}</div>
+                <div className="md:hidden">{i.status}</div>
               </TableCell>
               <TableCell className="hidden md:table-cell">{i.status}</TableCell>
               <TableCell className="hidden md:table-cell">
