@@ -24,9 +24,9 @@ const NewIssue = () => {
   const [eerror, setEerror] = useState("");
 
   return (
-    <div className="max-w-xl">
+    <div>
       {eerror && (
-        <Callout.Root color="red">
+        <Callout.Root>
           <Callout.Text>{eerror}</Callout.Text>
         </Callout.Root>
       )}

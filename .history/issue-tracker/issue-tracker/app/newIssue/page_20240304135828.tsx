@@ -22,11 +22,11 @@ const NewIssue = () => {
     formState: { errors },
   } = useForm<issueForm>();
   const [eerror, setEerror] = useState("");
-
+  
   return (
-    <div className="max-w-xl">
+    <div>
       {eerror && (
-        <Callout.Root color="red">
+        <Callout.Root>
           <Callout.Text>{eerror}</Callout.Text>
         </Callout.Root>
       )}
@@ -37,6 +37,7 @@ const NewIssue = () => {
             router.push("/issues");
           } catch (error) {
             setEerror("an unexpected error occurred!");
+            console.log(eerror);
           }
         })}
         className="flex flex-col space-y-2 space-x-4 max-w-xl">
