@@ -1,3 +1,4 @@
+'use client"z'
 import {
   Badge,
   Button,
@@ -15,6 +16,7 @@ import prisma from "@/prisma/client";
 import StatusBadge from "../components/StatusBadge";
 
 const IssuesPage = async () => {
+  useEffect(() => {});
   const issues = await prisma.issue.findMany();
   return (
     <div className="px-2 mx-2">

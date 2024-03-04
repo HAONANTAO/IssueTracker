@@ -1,3 +1,4 @@
+"use client";
 import {
   Badge,
   Button,
@@ -10,12 +11,34 @@ import {
   TableRow,
 } from "@radix-ui/themes";
 import Link from "next/link";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import prisma from "@/prisma/client";
 import StatusBadge from "../components/StatusBadge";
+import { Status } from "@prisma/client";
+interface Issue {
+  id: number;
+  title: string;
+  description: string;
+  status: Status;
+  createdAt: Date;
+  updatedAt: Date;
+}
 
 const IssuesPage = async () => {
-  const issues = await prisma.issue.findMany();
+  const [issues, setIssues] = useState<Issue[]>([]);
+
+  useEffect(() => {
+    const fetchIssues = async () => {
+      try {
+        const fetchedIssues = await prisma.issue.findMany();
+        setIssues(fetchedIssues);
+      } catch (error) {
+        console.error("Error fetching issues:", error);
+      }
+    };
+
+    fetchIssues();
+  }, []); // 空依赖项表示只在组件挂载时执行
   return (
     <div className="px-2 mx-2">
       <div className="flex items-center justify-center">
@@ -40,7 +63,7 @@ const IssuesPage = async () => {
           </TableRow>
         </TableHeader>
         {issues.map((i) => (
-          <TableBody>
+          <TableBody key={i.id}>
             <TableRow>
               <TableCell>
                 {i.title}

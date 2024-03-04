@@ -1,3 +1,4 @@
+"use client";
 import {
   Badge,
   Button,
@@ -15,7 +16,16 @@ import prisma from "@/prisma/client";
 import StatusBadge from "../components/StatusBadge";
 
 const IssuesPage = async () => {
-  const issues = await prisma.issue.findMany();
+  const [issues, setIssues] = useState([]);
+  useEffect(() => {
+    const fetchIssues = async () => {
+      const fetchedIssues = await prisma.issue.findMany();
+      setIssues(fetchedIssues);
+    };
+
+    fetchIssues();
+  }, []); // 添加空依赖项，以确保只在组件挂载时触发
+
   return (
     <div className="px-2 mx-2">
       <div className="flex items-center justify-center">
