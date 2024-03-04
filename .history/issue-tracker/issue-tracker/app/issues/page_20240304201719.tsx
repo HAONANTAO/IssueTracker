@@ -17,13 +17,11 @@ import delay from "delay";
 
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import NewIssueButton from "./NewIssueButton";
 const IssuesPage = async () => {
   const issues = await prisma.issue.findMany();
-  await delay(3000);
+  // await delay(3000);
   return (
-    <div className="px-2 mx-2">
-      <NewIssueButton></NewIssueButton>
+    
       <TableRoot variant="surface">
         <TableHeader>
           <TableRow>

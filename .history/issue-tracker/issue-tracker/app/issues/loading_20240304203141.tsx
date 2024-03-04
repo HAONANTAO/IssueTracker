@@ -1,15 +1,7 @@
-import {
-  TableBody,
-  TableCell,
-  TableColumnHeaderCell,
-  TableHeader,
-  TableRoot,
-  TableRow,
-} from "@radix-ui/themes";
+import { Skeleton, TableBody, TableCell, TableColumnHeaderCell, TableHeader, TableRoot, TableRow } from "@radix-ui/themes";
 import React from "react";
 import StatusBadge from "../components/StatusBadge";
-import Skeleton from "react-loading-skeleton";
-const issues = [1, 2, 3, 4, 5];
+
 const LoadingPage = () => {
   return (
     <>
@@ -31,18 +23,12 @@ const LoadingPage = () => {
         {issues.map((i) => (
           <TableBody>
             <TableRow>
-              <TableCell>
-                <Skeleton></Skeleton>
-              </TableCell>
+              <Skeleton />
               <TableCell className="hidden md:table-cell">
-                <Skeleton></Skeleton>
+                <StatusBadge status={i.status}></StatusBadge>
               </TableCell>
-              <TableCell className="hidden md:table-cell">
-                <Skeleton></Skeleton>
-              </TableCell>
-              <TableCell className="hidden md:table-cell">
-                <Skeleton />
-              </TableCell>
+              <Skeleton />
+              <Skeleton />
             </TableRow>
           </TableBody>
         ))}
