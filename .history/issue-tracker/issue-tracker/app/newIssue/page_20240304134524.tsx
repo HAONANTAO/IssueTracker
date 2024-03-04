@@ -38,7 +38,7 @@ const NewIssue = () => {
             await axios.post("/api/issues", data);
             router.push("/issues");
           } catch (error) {
-            setError("an unexpected error occured!");
+            setError(error);
           }
         })}
         className="flex flex-col space-y-2 space-x-4 max-w-xl">

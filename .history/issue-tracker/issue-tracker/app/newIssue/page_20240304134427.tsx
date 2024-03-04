@@ -1,5 +1,5 @@
 "use client";
-import { Button, Callout, TextField, InfoCircledIcon } from "@radix-ui/themes";
+import { Button, TextField } from "@radix-ui/themes";
 import React, { useState } from "react";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
@@ -21,24 +21,27 @@ const NewIssue = () => {
     control,
     formState: { errors },
   } = useForm<issueForm>();
-  const [error, setError] = useState("");
+  const { error, setError } = useState("");
   return (
     <div>
-      {error && (
+      {
         <Callout.Root>
           <Callout.Icon>
             <InfoCircledIcon />
           </Callout.Icon>
-          <Callout.Text>{error}</Callout.Text>
+          <Callout.Text>
+            You will need admin privileges to install and access this
+            application.
+          </Callout.Text>
         </Callout.Root>
-      )}
+      }
       <form
         onSubmit={handleSubmit(async (data) => {
           try {
             await axios.post("/api/issues", data);
             router.push("/issues");
           } catch (error) {
-            setError("an unexpected error occured!");
+            console.log(error);
           }
         })}
         className="flex flex-col space-y-2 space-x-4 max-w-xl">
