@@ -10,7 +10,6 @@ import { useRouter } from "next/navigation";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ValidationSchema } from "../ValidationSchema";
-import ErrorMessage from "../components/ErrorMessage";
 
 type issueForm = z.infer<typeof ValidationSchema>;
 const NewIssue = () => {
@@ -50,7 +49,11 @@ const NewIssue = () => {
           placeholder="Input the Issue Title here..."
           {...register("title")}
         />
-        {errors.title && <ErrorMessage>{errors.title.message}</ErrorMessage>}
+        {errors.title && (
+          <ErrorMessage>
+            {errors.title.message}
+          </ErrorMessage>
+        )}
         <Controller
           name="description"
           control={control}
