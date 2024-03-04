@@ -12,7 +12,7 @@ const IssuesPage = async () => {
         return (
           <ul>
             <li>{i.title}</li>
-            <li>{i.description}</li>
+            <li>{i.descrip</li>
           </ul>
         );
       })}

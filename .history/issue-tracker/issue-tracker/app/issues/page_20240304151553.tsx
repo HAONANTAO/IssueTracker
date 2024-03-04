@@ -11,8 +11,8 @@ const IssuesPage = async () => {
       {issues.map((i) => {
         return (
           <ul>
-            <li>{i.title}</li>
-            <li>{i.description}</li>
+            <li>i.title</li>
+            <li></li>
           </ul>
         );
       })}

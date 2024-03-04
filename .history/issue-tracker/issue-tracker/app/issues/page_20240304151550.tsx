@@ -9,12 +9,10 @@ const IssuesPage = async () => {
     <div className="px-2 mx-2">
       <span className="flex mx-2 my-2">All Issues</span>
       {issues.map((i) => {
-        return (
-          <ul>
-            <li>{i.title}</li>
-            <li>{i.description}</li>
-          </ul>
-        );
+        return <ul>
+          <li></li>
+          <li></li>
+        </ul>;
       })}
       <Button>
         <Link href="/newIssue">Create New Issue</Link>
