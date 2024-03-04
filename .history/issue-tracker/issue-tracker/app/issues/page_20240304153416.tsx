@@ -30,15 +30,13 @@ const IssuesPage = async () => {
           </TableRow>
         </TableHeader>
         {issues.map((i) => (
-          <TableBody>
-            <TableRow>
-              <TableCell>{i.id}</TableCell>
-              <TableCell>{i.status}</TableCell>
-              <TableCell>{i.createdAt.toDateString()}</TableCell>
-              <TableCell>{i.description}</TableCell>
-            </TableRow>
-          </TableBody>
+          <TableRow>
+            <TableCell></TableCell> <TableCell>{i.status}</TableCell>
+            <TableCell>{i.createdAt}</TableCell>{" "}
+            <TableCell>{i.status}</TableCell>
+          </TableRow>
         ))}
+        <TableBody></TableBody>
       </TableRoot>
     </div>
   );
