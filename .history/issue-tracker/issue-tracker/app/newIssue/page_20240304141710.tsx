@@ -60,10 +60,8 @@ const NewIssue = () => {
               {...field}
             />
           )}
+           {errors.description && <Text color="red">{errors.title.message}</Text>}
         />
-        {errors.description && (
-          <Text color="red">{errors.description.message}</Text>
-        )}
         <Button>Create New Issue</Button>
       </form>
     </div>
