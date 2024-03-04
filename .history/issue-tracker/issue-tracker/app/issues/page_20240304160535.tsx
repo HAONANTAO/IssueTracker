@@ -46,6 +46,7 @@ const IssuesPage = async () => {
                 <div className="block md:hidden">{i.status}</div>
               </TableCell>
               <TableCell className="hidden md:table-cell">
+                {" "}
                 <Badge color="orange">In progress</Badge>
               </TableCell>
               <TableCell className="hidden md:table-cell">
