@@ -40,7 +40,7 @@ const IssuesPage = async () => {
         {issues.map((i) => (
           <TableBody>
             <TableRow>
-              <TableCell>{i.title}</TableCell>
+              {/* <TableCell>{i.id}</TableCell> */}
               <TableCell className="hidden md:table-cell">{i.status}</TableCell>
               <TableCell className="hidden md:table-cell">
                 {i.createdAt.toDateString()}
