@@ -49,7 +49,7 @@ const NewIssue = () => {
           placeholder="Input the Issue Title here..."
           {...register("title")}
         />
-        {errors.title && <Text color="red">{errors.title.message}</Text>}
+        {errors.title && <Text>{errors.title.message}</Text>}
         <Controller
           name="description"
           control={control}

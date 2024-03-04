@@ -1,5 +1,5 @@
 "use client";
-import { Button, Callout, Text, TextField } from "@radix-ui/themes";
+import { Button, Callout, TextField } from "@radix-ui/themes";
 import React, { useState } from "react";
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
@@ -24,7 +24,7 @@ const NewIssue = () => {
     resolver: zodResolver(ValidationSchema),
   });
   const [eerror, setEerror] = useState("");
-
+  
   return (
     <div className="max-w-xl">
       {eerror && (
@@ -49,7 +49,7 @@ const NewIssue = () => {
           placeholder="Input the Issue Title here..."
           {...register("title")}
         />
-        {errors.title && <Text color="red">{errors.title.message}</Text>}
+    {errors.title && <Text}
         <Controller
           name="description"
           control={control}
