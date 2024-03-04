@@ -4,7 +4,7 @@ import React from "react";
 import prisma from "@/prisma/client";
 
 
-const IssuesPage = async () => {
+const IssuesPage = () => {
 
   const issues = await prisma.issue.findMany()
   return (

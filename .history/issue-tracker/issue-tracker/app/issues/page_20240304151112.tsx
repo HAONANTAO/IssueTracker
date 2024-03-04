@@ -4,9 +4,7 @@ import React from "react";
 import prisma from "@/prisma/client";
 
 
-const IssuesPage = async () => {
-
-  const issues = await prisma.issue.findMany()
+const IssuesPage = () => {
   return (
     <div className="px-2 mx-2">
       <span className="flex mx-2 my-2">Issues</span>
