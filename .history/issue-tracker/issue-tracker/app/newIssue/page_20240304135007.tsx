@@ -43,8 +43,8 @@ const NewIssue = () => {
           }
         })}
         className="flex flex-col space-y-2 space-x-4 max-w-xl">
-        <div className="flex items-center justify-center">
-          <span>NewIssue</span>
+       <div className="flex items-center">
+          <span>New Issue</span>
         </div>
         <TextField.Input
           placeholder="Input the Issue Title here..."

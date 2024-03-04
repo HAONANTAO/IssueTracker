@@ -21,10 +21,10 @@ const NewIssue = () => {
     control,
     formState: { errors },
   } = useForm<issueForm>();
-  const [error, setError] = useState("");
+  const [errors, setError] = useState("");
   return (
     <div>
-      {error && (
+      {errors && (
         <Callout.Root>
           <Callout.Icon>
             <InfoCircledIcon />
@@ -43,9 +43,7 @@ const NewIssue = () => {
           }
         })}
         className="flex flex-col space-y-2 space-x-4 max-w-xl">
-        <div className="flex items-center justify-center">
-          <span>NewIssue</span>
-        </div>
+        <h1 className="">NewIssue</h1>
         <TextField.Input
           placeholder="Input the Issue Title here..."
           {...register("title")}

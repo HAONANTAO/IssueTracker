@@ -43,7 +43,7 @@ const NewIssue = () => {
           }
         })}
         className="flex flex-col space-y-2 space-x-4 max-w-xl">
-        <div className="flex items-center justify-center">
+        <div className="flex items-center justt">
           <span>NewIssue</span>
         </div>
         <TextField.Input

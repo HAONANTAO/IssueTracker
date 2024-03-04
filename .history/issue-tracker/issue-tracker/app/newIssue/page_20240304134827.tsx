@@ -43,9 +43,7 @@ const NewIssue = () => {
           }
         })}
         className="flex flex-col space-y-2 space-x-4 max-w-xl">
-        <div className="flex items-center justify-center">
-          <span>NewIssue</span>
-        </div>
+        <span className="flex">NewIssue</span>
         <TextField.Input
           placeholder="Input the Issue Title here..."
           {...register("title")}
