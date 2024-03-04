@@ -28,7 +28,7 @@ const NewIssue = () => {
   const [eerror, setEerror] = useState("");
   const [loading, Setloading] = useState(false);
 
-  const onSubmit = handleSubmit(async (data) => {
+  const submitF = handleSubmit(async (data) => {
     try {
       Setloading(true);
       await axios.post("/api/issues", data);
@@ -45,7 +45,7 @@ const NewIssue = () => {
         </Callout.Root>
       )}
       <form
-        onSubmit={onSubmit}
+        onSubmit={submitF()}
         className="flex flex-col space-y-2 space-x-4 max-w-xl">
         <div className="flex items-center justify-center">
           <span>New Issue Create</span>

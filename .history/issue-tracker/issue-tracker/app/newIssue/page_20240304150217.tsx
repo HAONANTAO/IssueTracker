@@ -44,9 +44,7 @@ const NewIssue = () => {
           <Callout.Text>{eerror}</Callout.Text>
         </Callout.Root>
       )}
-      <form
-        onSubmit={onSubmit}
-        className="flex flex-col space-y-2 space-x-4 max-w-xl">
+      <form onSubmit className="flex flex-col space-y-2 space-x-4 max-w-xl">
         <div className="flex items-center justify-center">
           <span>New Issue Create</span>
         </div>
