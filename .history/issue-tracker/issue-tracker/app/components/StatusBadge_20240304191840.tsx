@@ -3,7 +3,7 @@ import { Badge } from "@radix-ui/themes";
 import React from "react";
 
 const StatusBadge = ({ status }: { status: Status }) => {
-  const statusColorMap: Record<Status, "orange" | "blue" | "green"> = {
+  const statusColorMap: Record<Status, string:"orange" |"blue" > = {
     OPEN: "orange",
     IN_PROGRESS: "blue",
     CLOSED: "green",
