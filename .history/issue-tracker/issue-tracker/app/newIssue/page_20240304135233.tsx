@@ -27,6 +27,9 @@ const NewIssue = () => {
     <div>
       {eerror && (
         <Callout.Root>
+          <Callout.Icon>
+            <InfoCircledIcon />
+          </Callout.Icon>
           <Callout.Text>{eerror}</Callout.Text>
         </Callout.Root>
       )}

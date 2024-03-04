@@ -21,13 +21,16 @@ const NewIssue = () => {
     control,
     formState: { errors },
   } = useForm<issueForm>();
-  const [eerror, setEerror] = useState("");
-  console.log(eerror);
+  const [eerror, setError] = useState("");
+  console.log(error);
   return (
     <div>
-      {eerror && (
+      {error && (
         <Callout.Root>
-          <Callout.Text>{eerror}</Callout.Text>
+          <Callout.Icon>
+            <InfoCircledIcon />
+          </Callout.Icon>
+          <Callout.Text>{error}</Callout.Text>
         </Callout.Root>
       )}
       <form
@@ -36,8 +39,8 @@ const NewIssue = () => {
             await axios.post("/api/issues", data);
             router.push("/issues");
           } catch (error) {
-            setEerror("an unexpected error occurred!");
-            console.log(eerror);
+            setError("an unexpected error occurred!");
+            console.log(error);
           }
         })}
         className="flex flex-col space-y-2 space-x-4 max-w-xl">
