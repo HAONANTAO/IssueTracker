@@ -47,7 +47,7 @@ const IssuesPage = async () => {
                 <div className="block md:hidden">{i.status}</div>
               </TableCell>
               <TableCell className="hidden md:table-cell">
-                <StatusBadge status={i.status}></StatusBadge>
+                <StatusBadge status={r.}></StatusBadge>
               </TableCell>
               <TableCell className="hidden md:table-cell">
                 {i.createdAt.toDateString()}
