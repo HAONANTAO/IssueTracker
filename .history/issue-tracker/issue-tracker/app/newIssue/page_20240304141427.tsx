@@ -24,7 +24,7 @@ const NewIssue = () => {
     resolver: zodResolver(ValidationSchema),
   });
   const [eerror, setEerror] = useState("");
-  
+  console.log(errors.title);
   return (
     <div className="max-w-xl">
       {eerror && (

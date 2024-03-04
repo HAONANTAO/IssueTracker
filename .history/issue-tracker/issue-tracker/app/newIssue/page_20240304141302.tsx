@@ -19,12 +19,13 @@ const NewIssue = () => {
     handleSubmit,
     watch,
     control,
+    form
     formState: { errors },
   } = useForm<issueForm>({
     resolver: zodResolver(ValidationSchema),
   });
   const [eerror, setEerror] = useState("");
-  
+
   return (
     <div className="max-w-xl">
       {eerror && (
@@ -49,7 +50,6 @@ const NewIssue = () => {
           placeholder="Input the Issue Title here..."
           {...register("title")}
         />
-
         <Controller
           name="description"
           control={control}
