@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
-import { schema } from "../../ValidationSchema";
+import { schema } from "./ValidationSchema";
 
 const prisma = new PrismaClient();
 export async function POST(request: NextRequest) {
