@@ -29,17 +29,14 @@ const IssuesPage = async () => {
           <TableRow>
             <TableColumnHeaderCell>Issue</TableColumnHeaderCell>
             <TableColumnHeaderCell className="hidden md:table-cell">
-              ID
-            </TableColumnHeaderCell>
-            <TableColumnHeaderCell className="hidden md:table-cell">
               Status
             </TableColumnHeaderCell>
             <TableColumnHeaderCell className="hidden md:table-cell">
               CreateAt
             </TableColumnHeaderCell>
-            {/* <TableColumnHeaderCell className="hidden md:table-cell">
+            <TableColumnHeaderCell className="hidden md:table-cell">
               Description
-            </TableColumnHeaderCell> */}
+            </TableColumnHeaderCell>
           </TableRow>
         </TableHeader>
         {issues.map((i) => (
@@ -56,9 +53,9 @@ const IssuesPage = async () => {
               <TableCell className="hidden md:table-cell">
                 {i.createdAt.toDateString()}
               </TableCell>
-              {/* <TableCell className="hidden md:table-cell">
+              <TableCell className="hidden md:table-cell">
                 {i.description}
-              </TableCell> */}
+              </TableCell>
             </TableRow>
           </TableBody>
         ))}

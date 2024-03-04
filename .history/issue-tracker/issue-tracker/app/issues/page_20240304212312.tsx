@@ -56,9 +56,9 @@ const IssuesPage = async () => {
               <TableCell className="hidden md:table-cell">
                 {i.createdAt.toDateString()}
               </TableCell>
-              {/* <TableCell className="hidden md:table-cell">
+              <TableCell className="hidden md:table-cell">
                 {i.description}
-              </TableCell> */}
+              </TableCell>
             </TableRow>
           </TableBody>
         ))}
