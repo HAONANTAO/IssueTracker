@@ -12,7 +12,6 @@ import {
 import Link from "next/link";
 import React from "react";
 import prisma from "@/prisma/client";
-import StatusBadge from "../components/StatusBadge";
 
 const IssuesPage = async () => {
   const issues = await prisma.issue.findMany();
@@ -47,7 +46,7 @@ const IssuesPage = async () => {
                 <div className="block md:hidden">{i.status}</div>
               </TableCell>
               <TableCell className="hidden md:table-cell">
-                <StatusBadge></StatusBadge>
+                <StatusBadge color="orange">In progress</StatusBadge>
               </TableCell>
               <TableCell className="hidden md:table-cell">
                 {i.createdAt.toDateString()}
