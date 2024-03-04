@@ -15,12 +15,7 @@ const IssuesPage = async () => {
   const issues = await prisma.issue.findMany();
   return (
     <div className="px-2 mx-2">
-      <div className="flex items-center justify-center">
-        <span>All Issues</span>
-      </div>
-      <Button>
-        <Link href="/newIssue">Create New Issue</Link>
-      </Button>
+      <span className="flex mx-2 my-2">All Issues</span>
       <TableRoot>
         <TableHeader>
           <TableRow>
@@ -31,6 +26,9 @@ const IssuesPage = async () => {
         </TableHeader>
         <TableBody></TableBody>
       </TableRoot>
+      <Button>
+        <Link href="/newIssue">Create New Issue</Link>
+      </Button>
     </div>
   );
 };

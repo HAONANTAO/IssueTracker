@@ -18,9 +18,7 @@ const IssuesPage = async () => {
       <div className="flex items-center justify-center">
         <span>All Issues</span>
       </div>
-      <Button>
-        <Link href="/newIssue">Create New Issue</Link>
-      </Button>
+
       <TableRoot>
         <TableHeader>
           <TableRow>
@@ -31,6 +29,7 @@ const IssuesPage = async () => {
         </TableHeader>
         <TableBody></TableBody>
       </TableRoot>
+     
     </div>
   );
 };
