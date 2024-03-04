@@ -13,10 +13,10 @@ const IssueDetailsPage = async ({ params }: Props) => {
   if (!issueDetails) return notFound();
   return (
     <div>
-      <p>{issueDetails.id}</p>
-      <p>{issueDetails.title}</p>
       <p>{issueDetails.description}</p>
-      <p>{issueDetails.updatedAt.toDateString()}</p>
+      <p>{issueDetails.description}</p>
+      <p></p>
+      <p></p>
     </div>
   );
 };

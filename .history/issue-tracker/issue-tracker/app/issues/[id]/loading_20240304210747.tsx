@@ -1,8 +1,6 @@
 import React from "react";
 
-
 const IssueDetailsPageLoading = () => {
-  
   return <div>Loading...</div>;
 };
 

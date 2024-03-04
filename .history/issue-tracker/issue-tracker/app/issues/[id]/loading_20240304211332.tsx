@@ -1,7 +1,7 @@
 import React from "react";
 
 
-const IssueDetailsPageLoading = () => {
+const IssueDetailsPageLoading = ({ params }: Props) => {
   
   return <div>Loading...</div>;
 };
