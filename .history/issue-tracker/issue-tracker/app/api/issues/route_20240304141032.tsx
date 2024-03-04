@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 export async function POST(request: NextRequest) {
   const body = await request.json();
   // zod for validation
-  const validation = ValidationSchema.safeParse(body);
+  const validation = schema.safeParse(body);
   if (!validation.success) {
     return NextResponse.json(validation.error.format(), { status: 400 });
   }

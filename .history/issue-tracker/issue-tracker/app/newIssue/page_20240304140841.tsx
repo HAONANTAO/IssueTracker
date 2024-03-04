@@ -8,8 +8,6 @@ import { useForm, SubmitHandler, Controller } from "react-hook-form";
 // works in app router
 import { useRouter } from "next/navigation";
 import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { ValidationSchema } from "../ValidationSchema";
 interface issueForm {
   title: string;
   description: string;
@@ -23,9 +21,7 @@ const NewIssue = () => {
     watch,
     control,
     formState: { errors },
-  } = useForm<issueForm>({
-    resolver: zodResolver(validationSchema),
-  });
+  } = useForm<issueForm>();
   const [eerror, setEerror] = useState("");
 
   return (

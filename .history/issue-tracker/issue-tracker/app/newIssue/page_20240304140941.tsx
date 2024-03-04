@@ -9,7 +9,6 @@ import { useForm, SubmitHandler, Controller } from "react-hook-form";
 import { useRouter } from "next/navigation";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ValidationSchema } from "../ValidationSchema";
 interface issueForm {
   title: string;
   description: string;
