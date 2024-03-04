@@ -66,7 +66,7 @@ const NewIssue = () => {
         {<ErrorMessage>{errors.title?.message}</ErrorMessage>}
 
         <Button>
-          Create New Issue <Spinner />
+          Create New Issue <Spinner className="/>
         </Button>
       </form>
     </div>

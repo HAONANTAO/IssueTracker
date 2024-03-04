@@ -11,7 +11,6 @@ import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ValidationSchema } from "../ValidationSchema";
 import ErrorMessage from "../components/ErrorMessage";
-import Spinner from "../components/Spinner";
 
 type issueForm = z.infer<typeof ValidationSchema>;
 const NewIssue = () => {
@@ -66,7 +65,8 @@ const NewIssue = () => {
         {<ErrorMessage>{errors.title?.message}</ErrorMessage>}
 
         <Button>
-          Create New Issue <Spinner />
+         < <div className="border-gray-300 h-20 w-20 animate-spin rounded-full border-8 border-t-blue-600" />>
+          Create New Issue
         </Button>
       </form>
     </div>
