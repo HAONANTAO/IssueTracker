@@ -21,7 +21,7 @@ const IssuesPage = async () => {
       <Button>
         <Link href="/newIssue">Create New Issue</Link>
       </Button>
-      <TableRoot variant="surface">
+      <TableRoot variant="">
         <TableHeader>
           <TableRow>
             <TableCell>Issue</TableCell>
