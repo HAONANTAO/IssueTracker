@@ -9,7 +9,6 @@ import Link from "next/link";
 import { Pencil2Icon, Cross2Icon } from "@radix-ui/react-icons";
 import IssueDetails from "../../components/IssueDetails";
 import EditPageButton from "@/app/components/EditPageButton";
-import DeletePageButton from "@/app/components/DeletePageButton";
 interface Props {
   params: { id: string };
 }
@@ -28,7 +27,12 @@ const IssueDetailsPage = async ({ params }: Props) => {
         <IssueDetails issueDetails={issueDetails}></IssueDetails>
         <Box className=" space-x-4 px-4">
           <EditPageButton issueDetails={issueDetails}></EditPageButton>
-          <DeletePageButton issueDetails={issueDetails}></DeletePageButton>
+          <Button>
+            <Cross2Icon></Cross2Icon>
+            <Link href={`api/issues/delete${issueDetails.id}`}>
+              Delete pages
+            </Link>
+          </Button>
         </Box>
       </Grid>
     </div>

@@ -28,7 +28,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
         <IssueDetails issueDetails={issueDetails}></IssueDetails>
         <Box className=" space-x-4 px-4">
           <EditPageButton issueDetails={issueDetails}></EditPageButton>
-          <DeletePageButton issueDetails={issueDetails}></DeletePageButton>
+          <DeletePageButton></DeletePageButton>
         </Box>
       </Grid>
     </div>
