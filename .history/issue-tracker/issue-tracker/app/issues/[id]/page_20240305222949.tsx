@@ -22,7 +22,16 @@ const IssueDetailsPage = async ({ params }: Props) => {
   return (
     <div>
       <Grid columns={{ initial: "1", md: "2" }}>
-       
+        <Box>
+          <Heading>{issueDetails.title}</Heading>{" "}
+          <StatusBadge status={issueDetails.status}></StatusBadge>{" "}
+          <Text>{issueDetails.updatedAt.toDateString()}</Text>
+          <Flex className="gap-2 mx-2 my-2 flex-col">
+            <Card className="prose mt-2">
+              <ReactMarkdown>{issueDetails.description}</ReactMarkdown>
+            </Card>
+          </Flex>
+        </Box>
         <Box className=" space-x-4 px-4">
           <Button>
             <Pencil2Icon></Pencil2Icon>
