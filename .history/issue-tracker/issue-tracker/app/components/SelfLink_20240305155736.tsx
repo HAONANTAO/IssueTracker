@@ -9,9 +9,9 @@ interface Props {
 const SelfLink = ({ href, children }: Props) => {
   return (
     <>
-      <NextLink href={href} passHref legacyBehavior>
-        <RadixLink> {children}</RadixLink>
-      </NextLink>
+      <RadixLink>
+        <NextLink href={href}>{children}</NextLink>
+      </RadixLink>
     </>
   );
 };

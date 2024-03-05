@@ -8,8 +8,9 @@ import {
   TableHeader,
   TableRoot,
   TableRow,
+  Link,
 } from "@radix-ui/themes";
-import SelfLink from "../components/SelfLink";
+import 
 import React from "react";
 import prisma from "@/prisma/client";
 import StatusBadge from "../components/StatusBadge";
@@ -44,7 +45,7 @@ const IssuesPage = async () => {
           <TableBody>
             <TableRow>
               <TableCell className="hidden md:table-cell">
-                <SelfLink href={`/issues/${i.id}`}> {i.title}</SelfLink>
+                <Link href={`/issues/${i.id}`}> {i.title}</Link>
               </TableCell>
 
               <TableCell className="hidden md:table-cell">
