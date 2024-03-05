@@ -20,8 +20,10 @@ const IssueDetailsPage = async ({ params }: Props) => {
       <Heading>{issueDetails.title}</Heading>
       <Flex className="gap-2 mx-2 my-2">
         <StatusBadge status={issueDetails.status}></StatusBadge>
-        <Text>{issueDetails.description}</Text>
-        <Text>{issueDetails.updatedAt.toDateString()}</Text>
+        <Text>{issueDetails.title}</Text>
+       
+        <p>{issueDetails.description}</p>
+        <p>{issueDetails.updatedAt.toDateString()}</p>
       </Flex>
     </div>
   );
