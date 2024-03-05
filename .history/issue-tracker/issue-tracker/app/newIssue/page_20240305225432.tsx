@@ -1,7 +1,7 @@
 import React from "react";
 import IssueForm from "./_components/IssueForm";
 const page = () => {
-  return <IssueForm></IssueForm>;
+  return <div></div>;
 };
 
 export default page;
