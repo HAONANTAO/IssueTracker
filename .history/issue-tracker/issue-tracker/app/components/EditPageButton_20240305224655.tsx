@@ -11,7 +11,7 @@ const EditPageButton = ({ issueDetails }: Props) => {
   return (
     <Button>
       <Pencil2Icon></Pencil2Icon>
-      <Link href={`issues/${issueDetails.id}/edit`}>Edit pages</Link>
+      <Link href={`api/issues/edit`}>Edit pages</Link>
     </Button>
   );
 };
