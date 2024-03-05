@@ -34,7 +34,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
         </Box>
         <Box className=" space-x-4 px-4">
           <Button>
-            <Pencil2Icon></Pencil2Icon>
+            Pencil2Icon
             <Link href={`api/issues/edit${issueDetails.id}`}>Edit pages</Link>
           </Button>
           <Button>
