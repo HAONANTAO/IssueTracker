@@ -26,7 +26,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
       <Grid columns={{ initial: "1", md: "2" }}>
         <IssueDetails issueDetails={issueDetails}></IssueDetails>
         <Box className=" space-x-4 px-4">
-          <EditPageButton issueDetails={issueDetails}></EditPageButton>
+          <EditPageButton
           <Button>
             <Cross2Icon></Cross2Icon>
             <Link href={`api/issues/delete${issueDetails.id}`}>

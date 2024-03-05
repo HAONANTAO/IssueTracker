@@ -8,7 +8,6 @@ import delay from "delay";
 import Link from "next/link";
 import { Pencil2Icon, Cross2Icon } from "@radix-ui/react-icons";
 import IssueDetails from "../../components/IssueDetails";
-import EditPageButton from "@/app/components/EditPageButton";
 interface Props {
   params: { id: string };
 }
@@ -26,7 +25,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
       <Grid columns={{ initial: "1", md: "2" }}>
         <IssueDetails issueDetails={issueDetails}></IssueDetails>
         <Box className=" space-x-4 px-4">
-          <EditPageButton issueDetails={issueDetails}></EditPageButton>
+          <
           <Button>
             <Cross2Icon></Cross2Icon>
             <Link href={`api/issues/delete${issueDetails.id}`}>
