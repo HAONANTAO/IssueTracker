@@ -20,12 +20,12 @@ const IssueDetailsPage = async ({ params }: Props) => {
   return (
     <div>
       <Heading>{issueDetails.title}</Heading>{" "}
-      <StatusBadge status={issueDetails.status}></StatusBadge>{" "}
-      <Text>{issueDetails.updatedAt.toDateString()}</Text>
+      <StatusBadge status={issueDetails.status}></StatusBadge>
       <Flex className="gap-2 mx-2 my-2 flex-col">
         <Card className="prose mt-2">
           <ReactMarkdown>{issueDetails.description}</ReactMarkdown>
         </Card>
+        <Text>{issueDetails.updatedAt.toDateString()}</Text>
       </Flex>
     </div>
   );
