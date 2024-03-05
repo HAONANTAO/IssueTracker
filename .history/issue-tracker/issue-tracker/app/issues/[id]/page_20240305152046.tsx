@@ -21,9 +21,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
       <StatusBadge status={issueDetails.status}></StatusBadge>
       <Flex className="gap-2 mx-2 my-2 flex-col">
         <Card>
-          <ReactMarkdown className="prose ">
-            {issueDetails.description}
-          </ReactMarkdown>
+          <ReactMarkdown>{issueDetails.description}</ReactMarkdown>
         </Card>
         <Text>{issueDetails.updatedAt.toDateString()}</Text>
       </Flex>
