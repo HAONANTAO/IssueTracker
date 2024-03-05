@@ -1,12 +1,12 @@
 import StatusBadge from "@/app/components/StatusBadge";
-import { Flex, Heading, Card, Text, Box } from "@radix-ui/themes";
+import { Flex, Heading, Card, Text } from "@radix-ui/themes";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 const IssueDetailsPageLoading = () => {
   return (
-    <Box className="max-w-xl">
+    <div>
       <Heading>
         <Skeleton />
       </Heading>
@@ -23,7 +23,7 @@ const IssueDetailsPageLoading = () => {
           <Skeleton />
         </Text>
       </Flex>
-    </Box>
+    </div>
   );
 };
 

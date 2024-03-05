@@ -1,5 +1,5 @@
 import StatusBadge from "@/app/components/StatusBadge";
-import { Flex, Heading, Card, Text, Box } from "@radix-ui/themes";
+import { Flex, Heading, Card, Text } from "@radix-ui/themes";
 import React from "react";
 import ReactMarkdown from "react-markdown";
 import Skeleton from "react-loading-skeleton";
