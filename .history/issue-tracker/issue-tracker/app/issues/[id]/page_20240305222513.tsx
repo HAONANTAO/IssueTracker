@@ -20,7 +20,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
 
   return (
     <div>
-      <Grid columns={{ initial: "1", md: "2" }}>
+      <Grid columns={{ initial: "1"}}>
         <Box>
           <Heading>{issueDetails.title}</Heading>{" "}
           <StatusBadge status={issueDetails.status}></StatusBadge>{" "}
