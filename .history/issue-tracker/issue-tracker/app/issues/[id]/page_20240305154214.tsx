@@ -18,7 +18,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
   return (
     <div>
       <Heading>{issueDetails.title}</Heading>{" "}
-      <StatusBadge status={issueDetails.status}></StatusBadge>
+      <StatusBadge classNstatus={issueDetails.status}></StatusBadge>
       <Flex className="gap-2 mx-2 my-2 flex-col">
         <Card className="prose mt-2">
           <ReactMarkdown>{issueDetails.description}</ReactMarkdown>
