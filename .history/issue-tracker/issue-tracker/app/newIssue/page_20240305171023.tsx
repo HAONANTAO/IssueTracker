@@ -18,9 +18,6 @@ import delay from "delay";
 type issueForm = z.infer<typeof ValidationSchema>;
 const NewIssue = () => {
   const router = useRouter();
-  // const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
-  //   ssr: false, // 关闭服务端渲染
-  // });
   const {
     register,
     handleSubmit,

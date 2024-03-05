@@ -1,8 +1,8 @@
 "use client";
 import { Button, Callout, Text, TextField } from "@radix-ui/themes";
 import React, { useState, useEffect } from "react";
-import SimpleMDE from "react-simplemde-editor";
 import dynamic from "next/dynamic";
+// import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import axios from "axios";
 import { useForm, SubmitHandler, Controller } from "react-hook-form";
@@ -17,10 +17,11 @@ import delay from "delay";
 
 type issueForm = z.infer<typeof ValidationSchema>;
 const NewIssue = () => {
+  const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
+    ssr: false, // 关闭服务端渲染
+  });
+
   const router = useRouter();
-  // const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
-  //   ssr: false, // 关闭服务端渲染
-  // });
   const {
     register,
     handleSubmit,
@@ -64,11 +65,10 @@ const NewIssue = () => {
         <Controller
           name="description"
           control={control}
-          defaultValue=""
           render={({ field }) => (
             <SimpleMDE
               placeholder="Input the Issue Description here..."
-              {...field}
+              
             />
           )}
         />
