@@ -7,7 +7,7 @@ import {
   TableRow,
 } from "@radix-ui/themes";
 import React from "react";
-// import StatusBadge from "../components/StatusBadge";
+import StatusBadge from "../components/StatusBadge";
 import { Skeleton } from "../components/Loading";
 const issues = [1, 2, 3, 4, 5];
 const LoadingPage = () => {

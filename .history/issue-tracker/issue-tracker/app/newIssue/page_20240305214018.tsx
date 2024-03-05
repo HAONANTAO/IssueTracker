@@ -11,8 +11,6 @@ import delay from "delay";
 import { useRouter } from "next/navigation";
 import { z } from "zod";
 import { ValidationSchema } from "../ValidationSchema";
-import ErrorMessage from "../components/ErrorMessage";
-import Spinner from "../components/Spinner";
 
 type issueForm = z.infer<typeof ValidationSchema>;
 const NewIssue = () => {
