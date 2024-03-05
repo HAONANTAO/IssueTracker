@@ -16,6 +16,7 @@ const IssueDetailsPageLoading = () => {
           <Skeleton count={5} />
         </Card>
         <Text>
+          {" "}
           <Skeleton />
         </Text>
       </Flex>
