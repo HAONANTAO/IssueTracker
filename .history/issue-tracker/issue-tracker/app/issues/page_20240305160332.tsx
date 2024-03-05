@@ -1,4 +1,7 @@
 import {
+  Badge,
+  Button,
+  Table,
   TableBody,
   TableCell,
   TableColumnHeaderCell,
@@ -39,7 +42,7 @@ const IssuesPage = async () => {
         </TableHeader>
         {issues.map((i) => (
           <TableBody>
-            <TableRow key={i.id}>
+            <TableRow>
               <TableCell className="hidden md:table-cell">
                 <SelfLink href={`/issues/${i.id}`}> {i.title}</SelfLink>
               </TableCell>

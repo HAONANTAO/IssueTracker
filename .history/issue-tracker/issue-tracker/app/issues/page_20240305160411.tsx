@@ -16,6 +16,7 @@ import delay from "delay";
 // import "react-loading-skeleton/dist/skeleton.css";
 import NewIssueButton from "./NewIssueButton";
 const IssuesPage = async () => {
+  
   const issues = await prisma.issue.findMany();
   await delay(1000);
   return (
@@ -39,7 +40,7 @@ const IssuesPage = async () => {
         </TableHeader>
         {issues.map((i) => (
           <TableBody>
-            <TableRow key={i.id}>
+            <TableRow>
               <TableCell className="hidden md:table-cell">
                 <SelfLink href={`/issues/${i.id}`}> {i.title}</SelfLink>
               </TableCell>
