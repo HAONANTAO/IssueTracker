@@ -24,7 +24,10 @@ const IssueDetailsPage = async ({ params }: Props) => {
       <Grid columns={{ initial: "1", md: "2" }}>
        
         <Box className=" space-x-4 px-4">
-        
+          <Button>
+            <Pencil2Icon></Pencil2Icon>
+            <Link href={`api/issues/edit${issueDetails.id}`}>Edit pages</Link>
+          </Button>
           <Button>
             <Cross2Icon></Cross2Icon>
             <Link href={`api/issues/delete${issueDetails.id}`}>
