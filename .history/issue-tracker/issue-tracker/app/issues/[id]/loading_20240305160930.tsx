@@ -10,16 +10,14 @@ const IssueDetailsPageLoading = () => {
         <Skeleton />
       </Heading>
       <StatusBadge status="CLOSED">
+        {" "}
         <Skeleton />
       </StatusBadge>
       <Flex className="gap-2 mx-2 my-2 flex-col">
         <Card className="prose mt-2">
-          <ReactMarkdown></ReactMarkdown>
+          <ReactMarkdown>{issueDetails.description}</ReactMarkdown>
         </Card>
-        <Text>
-          {" "}
-          <Skeleton />
-        </Text>
+        <Text>{issueDetails.updatedAt.toDateString()}</Text>
       </Flex>
     </div>
   );

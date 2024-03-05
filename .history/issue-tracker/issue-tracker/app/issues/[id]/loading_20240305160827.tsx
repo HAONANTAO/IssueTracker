@@ -1,25 +1,19 @@
 import StatusBadge from "@/app/components/StatusBadge";
-import { Flex, Heading, Card, Text } from "@radix-ui/themes";
+import { Flex, Heading, Card } from "@radix-ui/themes";
 import React from "react";
 import ReactMarkdown from "react-markdown";
-import Skeleton from "react-loading-skeleton";
+
 const IssueDetailsPageLoading = () => {
   return (
     <div>
-      <Heading>
-        <Skeleton />
-      </Heading>
-      <StatusBadge status="CLOSED">
-        <Skeleton />
-      </StatusBadge>
+      {" "}
+      <Heading>{issueDetails.title}</Heading>{" "}
+      <StatusBadge status={issueDetails.status}></StatusBadge>
       <Flex className="gap-2 mx-2 my-2 flex-col">
         <Card className="prose mt-2">
-          <ReactMarkdown></ReactMarkdown>
+          <ReactMarkdown>{issueDetails.description}</ReactMarkdown>
         </Card>
-        <Text>
-          {" "}
-          <Skeleton />
-        </Text>
+        <Text>{issueDetails.updatedAt.toDateString()}</Text>
       </Flex>
     </div>
   );
