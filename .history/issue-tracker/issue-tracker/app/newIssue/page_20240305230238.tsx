@@ -1,5 +1,5 @@
 import React from "react";
-import IssueForm from "../components/IssueForm";
+import IssueForm from "./_components/IssueForm";
 const page = () => {
   return <IssueForm></IssueForm>;
 };

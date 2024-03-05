@@ -8,11 +8,11 @@ interface Props {
   issueDetails: Issue;
 }
 const EditPageButton = ({ issueDetails }: Props) => {
-  console.log(issueDetails.id);
+  console.log(object)
   return (
     <Button>
       <Pencil2Icon></Pencil2Icon>
-      <Link href={`/issues/${issueDetails.id}/edit`}>Edit pages</Link>
+      <Link href={`issues/${issueDetails.id}/edit`}>Edit pages</Link>
     </Button>
   );
 };
