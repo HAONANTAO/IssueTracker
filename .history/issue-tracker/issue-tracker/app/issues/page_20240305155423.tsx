@@ -11,7 +11,7 @@ import {
   Link,
 } from "@radix-ui/themes";
 
-import React from "react";
+import React, { useEffect } from "react";
 import prisma from "@/prisma/client";
 import StatusBadge from "../components/StatusBadge";
 import delay from "delay";

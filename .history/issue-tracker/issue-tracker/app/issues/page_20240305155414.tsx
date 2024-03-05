@@ -11,13 +11,13 @@ import {
   Link,
 } from "@radix-ui/themes";
 
-import React from "react";
+import React, { useEffect } from "react";
 import prisma from "@/prisma/client";
 import StatusBadge from "../components/StatusBadge";
 import delay from "delay";
 
 // import Skeleton from "react-loading-skeleton";
-// import "react-loading-skeleton/dist/skeleton.css";
+import "react-loading-skeleton/dist/skeleton.css";
 import NewIssueButton from "./NewIssueButton";
 const IssuesPage = async () => {
   const issues = await prisma.issue.findMany();
