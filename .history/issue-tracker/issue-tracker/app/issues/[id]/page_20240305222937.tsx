@@ -38,7 +38,6 @@ const IssueDetailsPage = async ({ params }: Props) => {
             <Link href={`api/issues/edit${issueDetails.id}`}>Edit pages</Link>
           </Button>
           <Button>
-            <Cross2Icon></Cross2Icon>
             <Link href={`api/issues/delete${issueDetails.id}`}>
               Delete pages
             </Link>

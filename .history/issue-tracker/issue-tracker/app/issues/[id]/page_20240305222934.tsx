@@ -6,7 +6,7 @@ import StatusBadge from "@/app/components/StatusBadge";
 import ReactMarkdown from "react-markdown";
 import delay from "delay";
 import Link from "next/link";
-import { Pencil2Icon, Cross2Icon } from "@radix-ui/react-icons";
+import { Pencil2Icon,Cross } from "@radix-ui/react-icons";
 interface Props {
   params: { id: string };
 }
@@ -38,7 +38,6 @@ const IssueDetailsPage = async ({ params }: Props) => {
             <Link href={`api/issues/edit${issueDetails.id}`}>Edit pages</Link>
           </Button>
           <Button>
-            <Cross2Icon></Cross2Icon>
             <Link href={`api/issues/delete${issueDetails.id}`}>
               Delete pages
             </Link>
