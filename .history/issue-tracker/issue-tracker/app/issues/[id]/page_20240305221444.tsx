@@ -1,11 +1,10 @@
 import React from "react";
 import prisma from "@/prisma/client";
 import { notFound } from "next/navigation";
-import { Box, Button, Card, Flex, Heading, Text } from "@radix-ui/themes";
+import { Box, Card, Flex, Heading, Text } from "@radix-ui/themes";
 import StatusBadge from "@/app/components/StatusBadge";
 import ReactMarkdown from "react-markdown";
 import delay from "delay";
-import Link from "next/link";
 interface Props {
   params: { id: string };
 }
@@ -30,14 +29,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
           </Card>
         </Flex>
       </Box>
-      <Box className=" space-x-4 px-4">
-        <Button>
-          <Link href={`api/issues/edit${issueDetails.id}`}>Edit pages</Link>
-        </Button>
-        <Button>
-          <Link href={`api/issues/delete${issueDetails.id}`}>Delete pages</Link>
-        </Button>
-      </Box>
+      <Box></Box>
     </div>
   );
 };

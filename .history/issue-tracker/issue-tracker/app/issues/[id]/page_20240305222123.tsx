@@ -30,7 +30,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
           </Card>
         </Flex>
       </Box>
-      <Box className=" space-x-4 px-4">
+      <Box className="mx-4 px-4">
         <Button>
           <Link href={`api/issues/edit${issueDetails.id}`}>Edit pages</Link>
         </Button>

@@ -20,7 +20,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
 
   return (
     <div>
-      <Box>
+      <Box className="px-2">
         <Heading>{issueDetails.title}</Heading>{" "}
         <StatusBadge status={issueDetails.status}></StatusBadge>{" "}
         <Text>{issueDetails.updatedAt.toDateString()}</Text>
@@ -29,8 +29,6 @@ const IssueDetailsPage = async ({ params }: Props) => {
             <ReactMarkdown>{issueDetails.description}</ReactMarkdown>
           </Card>
         </Flex>
-      </Box>
-      <Box className=" space-x-4 px-4">
         <Button>
           <Link href={`api/issues/edit${issueDetails.id}`}>Edit pages</Link>
         </Button>
