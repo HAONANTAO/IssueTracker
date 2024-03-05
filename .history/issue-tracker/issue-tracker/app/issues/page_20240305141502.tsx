@@ -28,7 +28,9 @@ const IssuesPage = async () => {
         <TableHeader>
           <TableRow>
             <TableColumnHeaderCell>Issue</TableColumnHeaderCell>
-
+            <TableColumnHeaderCell className="hidden md:table-cell">
+              ID
+            </TableColumnHeaderCell>
             <TableColumnHeaderCell className="hidden md:table-cell">
               Status
             </TableColumnHeaderCell>
@@ -46,7 +48,10 @@ const IssuesPage = async () => {
               <TableCell className="hidden md:table-cell">
                 <Link href={`/issues/${i.id}`}> {i.title}</Link>
               </TableCell>
-
+              <TableCell>
+                {i.title}
+                <div className="block md:hidden">{i.status}</div>
+              </TableCell>
               <TableCell className="hidden md:table-cell">
                 <StatusBadge status={i.status}></StatusBadge>
               </TableCell>
