@@ -1,9 +1,9 @@
 import React from "react";
 import prisma from "@/prisma/client";
 import { notFound } from "next/navigation";
-import { Card, Flex, Heading, Text } from "@radix-ui/themes";
+import { Flex, Heading, Text } from "@radix-ui/themes";
 import StatusBadge from "@/app/components/StatusBadge";
-import ReactMarkdown from "react-markdown";
+import Markdown from "react-markdown";
 interface Props {
   params: { id: string };
 }
@@ -20,9 +20,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
       <Heading>{issueDetails.title}</Heading>{" "}
       <StatusBadge status={issueDetails.status}></StatusBadge>
       <Flex className="gap-2 mx-2 my-2 flex-col">
-        <Card>
-          <ReactMarkdown>{issueDetails.description}</ReactMarkdown>
-        </Card>
+        <Text>{issueDetails.description}</Text>
         <Text>{issueDetails.updatedAt.toDateString()}</Text>
       </Flex>
     </div>
