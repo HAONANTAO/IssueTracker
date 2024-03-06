@@ -2,7 +2,7 @@ import React from "react";
 import IssueForm from "@/app/components/IssueForm";
 import { Issue } from "@prisma/client";
 import { notFound } from "next/navigation";
-import UpdateForm from "@/app/issues/[id]/edit/_components/UpdateForm";
+import UpdateForm from "@/app/api/issues/[id]/_components/UpdateForm";
 
 interface Props {
   params: { id: string };
