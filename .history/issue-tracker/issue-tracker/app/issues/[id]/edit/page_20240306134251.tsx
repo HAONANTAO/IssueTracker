@@ -2,6 +2,7 @@ import React from "react";
 import IssueForm from "@/app/components/IssueForm";
 import { Issue } from "@prisma/client";
 import { notFound } from "next/navigation";
+import UpdateForm from "@/app/issues/[id]/edit/_components/UpdateForm";
 
 interface Props {
   params: { id: string };
@@ -11,7 +12,7 @@ const EditPage = async ({ params }: Props) => {
     where: { id: parseInt(params.id) },
   });
   if (!issue) return notFound();
-  return <IssueForm issue={issue}></IssueForm>;
+  return <Issue issue={issue}></Issue>;
 };
 
 export default EditPage;

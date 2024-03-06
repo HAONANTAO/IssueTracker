@@ -37,8 +37,8 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
     await delay(1000);
     try {
       Setloading(true);
-      if (issue) {
-        await axios.patch(`/api/issues/${issue!.id}/edit`, data);
+      if(issue){
+        
       }
       await axios.post("/api/issues", data);
       router.push("/issues");
@@ -79,7 +79,7 @@ const IssueForm = ({ issue }: { issue?: Issue }) => {
         {<ErrorMessage>{errors.description?.message}</ErrorMessage>}
 
         <Button disabled={loading}>
-          {issue ? "Edit The Issue" : "Create New Issue"}
+          Create New Issue
           {loading && <Spinner />}
         </Button>
       </form>
