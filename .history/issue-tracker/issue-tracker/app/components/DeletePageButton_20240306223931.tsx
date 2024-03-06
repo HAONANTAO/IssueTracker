@@ -33,7 +33,7 @@ const DeletePageButton = ({ issueDetails }: Props) => {
           </AlertDialog.Cancel>
           <AlertDialog.Action>
             <Button variant="solid" color="red">
-             Confirm Delete
+              Revoke access
             </Button>
           </AlertDialog.Action>
         </Flex>

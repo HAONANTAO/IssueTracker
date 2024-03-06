@@ -22,7 +22,8 @@ const DeletePageButton = ({ issueDetails }: Props) => {
       <AlertDialog.Content style={{ maxWidth: 450 }}>
         <AlertDialog.Title>Confirm to Delete </AlertDialog.Title>
         <AlertDialog.Description size="2">
-          Are you sure to delete this issue?
+          Are you sure? This application will no longer be accessible and any
+          existing sessions will be expired.
         </AlertDialog.Description>
 
         <Flex gap="3" mt="4" justify="end">
@@ -33,7 +34,7 @@ const DeletePageButton = ({ issueDetails }: Props) => {
           </AlertDialog.Cancel>
           <AlertDialog.Action>
             <Button variant="solid" color="red">
-             Confirm Delete
+              Revoke access
             </Button>
           </AlertDialog.Action>
         </Flex>

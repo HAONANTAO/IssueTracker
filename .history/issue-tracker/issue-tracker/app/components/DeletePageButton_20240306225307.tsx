@@ -25,7 +25,7 @@ const DeletePageButton = ({ issueDetails }: Props) => {
           Are you sure to delete this issue?
         </AlertDialog.Description>
 
-        <Flex gap="3" mt="4" justify="end">
+        <Flex gap="3" mt="4" justify="">
           <AlertDialog.Cancel>
             <Button variant="soft" color="gray">
               Cancel
