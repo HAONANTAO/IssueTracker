@@ -5,7 +5,7 @@ import "./theme-config.css";
 import Navbar from "./Navbar";
 // import radix ui
 import "@radix-ui/themes/styles.css";
-import { Container, Theme } from "@radix-ui/themes";
+import { Theme } from "@radix-ui/themes";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -28,10 +28,8 @@ export default function RootLayout({
         <Theme>
           <Navbar></Navbar>
           {/* moving the children into the main part, more semantic */}
-
-          <main>
-            <Container> {children}</Container>
-          </main>
+          <Cont
+          <main> {children}</main>
         </Theme>
       </body>
     </html>

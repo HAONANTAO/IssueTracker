@@ -24,15 +24,13 @@ const IssueDetailsPage = async ({ params }: Props) => {
 
   return (
     <div>
-      <Grid columns={{ initial: "1", md: "5" }} gap="5">
+      <Grid columns={{ initial: "1", md: "5" }}>
         <Box className="lg:col-span-4">
           <IssueDetails issueDetails={issueDetails}></IssueDetails>
-        </Box>
-        <Box className=" space-x-4 px-4 ">
-          <Flex direction="column" gap="4">
-            <EditPageButton issueDetails={issueDetails}></EditPageButton>
-            <DeletePageButton issueDetails={issueDetails}></DeletePageButton>
-          </Flex>
+        </Box >
+        <Box>
+          <EditPageButton issueDetails={issueDetails}></EditPageButton>
+          <DeletePageButton issueDetails={issueDetails}></DeletePageButton>
         </Box>
       </Grid>
     </div>

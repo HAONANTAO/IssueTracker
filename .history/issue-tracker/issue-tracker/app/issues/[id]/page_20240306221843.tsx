@@ -28,7 +28,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
         <Box className="lg:col-span-4">
           <IssueDetails issueDetails={issueDetails}></IssueDetails>
         </Box>
-        <Box className=" space-x-4 px-4 ">
+        <Box className="  ">
           <Flex direction="column" gap="4">
             <EditPageButton issueDetails={issueDetails}></EditPageButton>
             <DeletePageButton issueDetails={issueDetails}></DeletePageButton>

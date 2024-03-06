@@ -30,7 +30,9 @@ export default function RootLayout({
           {/* moving the children into the main part, more semantic */}
 
           <main>
-            <Container> {children}</Container>
+            {" "}
+            <Container></Container>
+            {children}
           </main>
         </Theme>
       </body>

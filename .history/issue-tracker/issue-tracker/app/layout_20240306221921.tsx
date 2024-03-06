@@ -28,10 +28,8 @@ export default function RootLayout({
         <Theme>
           <Navbar></Navbar>
           {/* moving the children into the main part, more semantic */}
-
-          <main>
-            <Container> {children}</Container>
-          </main>
+          <Container></Container>
+          <main> {children}</main>
         </Theme>
       </body>
     </html>

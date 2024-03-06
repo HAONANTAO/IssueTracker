@@ -29,7 +29,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
           <IssueDetails issueDetails={issueDetails}></IssueDetails>
         </Box>
         <Box className=" space-x-4 px-4 ">
-          <Flex direction="column" gap="4">
+          <Flex direction={}>
             <EditPageButton issueDetails={issueDetails}></EditPageButton>
             <DeletePageButton issueDetails={issueDetails}></DeletePageButton>
           </Flex>
