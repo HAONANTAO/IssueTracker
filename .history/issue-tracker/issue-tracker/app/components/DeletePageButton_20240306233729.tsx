@@ -11,6 +11,7 @@ interface Props {
 }
 const DeletePageButton = ({ issueDetails }: Props) => {
   const HandleDelete = async () => {
+    console.log("delete btn");
     await axios.delete(`/api/issues/${issueDetails.id}`);
   };
 

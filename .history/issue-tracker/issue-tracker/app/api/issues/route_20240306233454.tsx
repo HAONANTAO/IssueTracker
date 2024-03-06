@@ -20,12 +20,13 @@ export async function POST(request: NextRequest) {
   });
 }
 
-export async function DELETE({ params }: { params: { id: number } }) {
- 
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: number } },
+) {
   const issue = await prisma.issue.findUnique({
     where: { id: params.id },
   });
-
   if (!issue)
     return NextResponse.json({ error: "failed to delete" }, { status: 400 });
   await prisma.issue.delete({

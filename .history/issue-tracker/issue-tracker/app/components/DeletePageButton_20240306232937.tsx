@@ -2,16 +2,20 @@
 import { Issue } from "@prisma/client";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { Button, Flex, AlertDialog } from "@radix-ui/themes";
-
+import Link from "next/link";
 import React from "react";
 import prisma from "@/prisma/client";
 import axios from "axios";
+import { useRouter } from "next/navigation";
 interface Props {
   issueDetails: Issue;
 }
 const DeletePageButton = ({ issueDetails }: Props) => {
   const HandleDelete = async () => {
+    const router = useRouter();
     await axios.delete(`/api/issues/${issueDetails.id}`);
+    router.push("/issues");
+    router.refresh();
   };
 
   return (
