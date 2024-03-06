@@ -1,5 +1,5 @@
 import React from "react";
-import IssueForm from "@/app/components/IssueForm";
+
 import { Issue } from "@prisma/client";
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";

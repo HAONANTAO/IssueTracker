@@ -3,14 +3,13 @@ import React from "react";
 import { Issue } from "@prisma/client";
 import { notFound } from "next/navigation";
 import dynamic from "next/dynamic";
-import IssueFormSkeleton from "./loading";
 interface Props {
   params: { id: string };
 }
 
 const IssueForm = dynamic(() => import("@/app/components/IssueForm"), {
   ssr: false,
-  loading: () => <IssueFormSkeleton></IssueFormSkeleton>,
+  load
 });
 
 const EditPage = async ({ params }: Props) => {
