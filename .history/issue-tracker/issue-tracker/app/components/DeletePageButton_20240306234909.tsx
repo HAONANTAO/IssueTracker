@@ -11,7 +11,7 @@ interface Props {
   issueDetails: Issue;
 }
 const DeletePageButton = ({ issueDetails }: Props) => {
-  const router = useRouter();
+  useRouter();
   return (
     <AlertDialog.Root>
       <AlertDialog.Trigger>
@@ -40,8 +40,6 @@ const DeletePageButton = ({ issueDetails }: Props) => {
               color="red"
               onClick={async () => {
                 await axios.delete(`/api/issues/${issueDetails.id}`);
-                router.push("/issues");
-                router.refresh();
               }}>
               Confirm Delete
             </Button>

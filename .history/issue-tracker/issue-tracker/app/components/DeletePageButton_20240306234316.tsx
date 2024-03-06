@@ -6,12 +6,14 @@ import { Button, Flex, AlertDialog } from "@radix-ui/themes";
 import React from "react";
 import prisma from "@/prisma/client";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 interface Props {
   issueDetails: Issue;
 }
 const DeletePageButton = ({ issueDetails }: Props) => {
-  const router = useRouter();
+  const HandleDelete = async () => {
+    await axios.delete(`/api/issues/${issueDetails.id}`);
+  };
+
   return (
     <AlertDialog.Root>
       <AlertDialog.Trigger>
@@ -38,10 +40,8 @@ const DeletePageButton = ({ issueDetails }: Props) => {
             <Button
               variant="solid"
               color="red"
-              onClick={async () => {
-                await axios.delete(`/api/issues/${issueDetails.id}`);
-                router.push("/issues");
-                router.refresh();
+              onClick={() => {
+                HandleDelete();
               }}>
               Confirm Delete
             </Button>

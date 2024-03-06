@@ -41,7 +41,6 @@ const DeletePageButton = ({ issueDetails }: Props) => {
               onClick={async () => {
                 await axios.delete(`/api/issues/${issueDetails.id}`);
                 router.push("/issues");
-                router.refresh();
               }}>
               Confirm Delete
             </Button>

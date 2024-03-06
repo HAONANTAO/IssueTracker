@@ -6,12 +6,20 @@ import { Button, Flex, AlertDialog } from "@radix-ui/themes";
 import React from "react";
 import prisma from "@/prisma/client";
 import axios from "axios";
-import { useRouter } from "next/navigation";
 interface Props {
   issueDetails: Issue;
 }
 const DeletePageButton = ({ issueDetails }: Props) => {
-  const router = useRouter();
+  const HandleDelete = async () => {
+    try {
+      await axios.delete(`/api/issues/${issueDetails.id}`);
+      // 处理删除成功的逻辑
+    } catch (error) {
+      // 处理删除失败的逻辑
+      console.error("Error deleting issue:", error);
+    }
+  };
+
   return (
     <AlertDialog.Root>
       <AlertDialog.Trigger>
@@ -38,10 +46,8 @@ const DeletePageButton = ({ issueDetails }: Props) => {
             <Button
               variant="solid"
               color="red"
-              onClick={async () => {
-                await axios.delete(`/api/issues/${issueDetails.id}`);
-                router.push("/issues");
-                router.refresh();
+              onClick={() => {
+                HandleDelete();
               }}>
               Confirm Delete
             </Button>
