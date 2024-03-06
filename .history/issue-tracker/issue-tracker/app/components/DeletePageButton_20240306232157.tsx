@@ -10,8 +10,8 @@ interface Props {
   issueDetails: Issue;
 }
 const DeletePageButton = ({ issueDetails }: Props) => {
-  const HandleDelete = async () => {
-    await axios.delete(`/api/issues/${issueDetails.id}`);
+  const HandleDelete = async (id: number) => {
+    await axios.delete(`/api/issues/${id}`);
   };
 
   return (
@@ -19,7 +19,7 @@ const DeletePageButton = ({ issueDetails }: Props) => {
       <AlertDialog.Trigger>
         <Button color="red">
           <Cross2Icon></Cross2Icon>
-          Delete pages
+          <Link href={`api/issues/delete${issueDetails.id}`}>Delete pages</Link>
         </Button>
       </AlertDialog.Trigger>
 
@@ -41,7 +41,7 @@ const DeletePageButton = ({ issueDetails }: Props) => {
               variant="solid"
               color="red"
               onClick={() => {
-                HandleDelete();
+                HandleDelete(issueDetails.id);
               }}>
               Confirm Delete
             </Button>

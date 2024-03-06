@@ -10,7 +10,8 @@ interface Props {
   issueDetails: Issue;
 }
 const DeletePageButton = ({ issueDetails }: Props) => {
-  const HandleDelete = async () => {
+  const HandleDelete = async (id: number) => {
+    console.log("ss");
     await axios.delete(`/api/issues/${issueDetails.id}`);
   };
 

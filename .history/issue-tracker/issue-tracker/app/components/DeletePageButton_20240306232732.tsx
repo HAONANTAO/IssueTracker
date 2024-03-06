@@ -11,6 +11,7 @@ interface Props {
 }
 const DeletePageButton = ({ issueDetails }: Props) => {
   const HandleDelete = async () => {
+    console.log("ss");
     await axios.delete(`/api/issues/${issueDetails.id}`);
   };
 
@@ -41,7 +42,7 @@ const DeletePageButton = ({ issueDetails }: Props) => {
               variant="solid"
               color="red"
               onClick={() => {
-                HandleDelete();
+                HandleDelete(issueDetails.id);
               }}>
               Confirm Delete
             </Button>

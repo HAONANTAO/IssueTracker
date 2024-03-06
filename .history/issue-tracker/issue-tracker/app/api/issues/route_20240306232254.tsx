@@ -25,9 +25,9 @@ export async function DELETE(
   { params }: { params: { id: number } },
 ) {
   const issue = prisma.issue.findUnique({
-    where: { id: params.id },
+    where: { id: parseInt(params.id) },
   });
   if (!issue)
     return NextResponse.json({ error: "failed to delete" }, { status: 400 });
-  return NextResponse.json({ msg: "successfully delete" });
+  return NextResponse.json({msg:"successfully delete"})
 }
