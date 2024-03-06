@@ -29,5 +29,5 @@ export async function DELETE(
   });
   if (!issue)
     return NextResponse.json({ error: "failed to delete" }, { status: 400 });
-  return NextResponse.json({msg:"successfully delete"})
+  return NextRespon
 }
