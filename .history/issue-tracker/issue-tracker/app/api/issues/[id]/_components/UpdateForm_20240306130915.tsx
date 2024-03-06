@@ -1,0 +1,86 @@
+"use client";
+import { Button, Callout, TextField } from "@radix-ui/themes";
+import axios from "axios";
+import "easymde/dist/easymde.min.css";
+import { PropsWithChildren, ReactNode, useState } from "react";
+import { Controller, useForm } from "react-hook-form";
+import SimpleMDE from "react-simplemde-editor";
+// works in app router
+import { zodResolver } from "@hookform/resolvers/zod";
+import delay from "delay";
+import { useRouter } from "next/navigation";
+import { z } from "zod";
+import { ValidationSchema } from "../../../../ValidationSchema";
+import ErrorMessage from "../../../../components/ErrorMessage";
+import Spinner from "../../../../components/Spinner";
+import { Issue } from "@prisma/client";
+
+type UpdateForm = z.infer<typeof ValidationSchema>;
+const UpdateForm = ({ issue }: { issue?: Issue }) => {
+  const router = useRouter();
+  // const SimpleMDE = dynamic(() => import("react-simplemde-editor"), {
+  //   ssr: false, // 关闭服务端渲染
+  // });
+  const {
+    register,
+    handleSubmit,
+    watch,
+    control,
+    formState: { errors },
+  } = useForm<UpdateForm>({
+    resolver: zodResolver(ValidationSchema),
+  });
+  const [eerror, setEerror] = useState("");
+  const [loading, Setloading] = useState(false);
+
+  const onSubmit = handleSubmit(async (data) => {
+    await delay(1000);
+    try {
+      Setloading(true);
+      await axios.post("/api/issues", data);
+      router.push("/issues");
+    } catch (error) {
+      setEerror("an unexpected error occurred!");
+    }
+  });
+  return (
+    <div className="max-w-xl">
+      {eerror && (
+        <Callout.Root color="red">
+          <Callout.Text>{eerror}</Callout.Text>
+        </Callout.Root>
+      )}
+      <form
+        onSubmit={onSubmit}
+        className="flex flex-col space-y-2 space-x-4 max-w-xl">
+        <div className="flex items-center justify-center">
+          <span>Edit the Issue </span>
+        </div>
+        <TextField.Input
+          placeholder="Input the Issue Title here..."
+          defaultValue={issue?.title}
+          {...register("title")}
+        />
+        {<ErrorMessage>{errors.title?.message}</ErrorMessage>}
+        <Controller
+          name="description"
+          control={control}
+          defaultValue={issue?.description}
+          render={({ field }) => (
+            <SimpleMDE
+              placeholder="Input the Issue Description here..."
+              {...field}
+            />
+          )}
+        />
+        {<ErrorMessage>{errors.description?.message}</ErrorMessage>}
+
+        <Button disabled={loading}>
+          Edit The Issue{loading && <Spinner />}
+        </Button>
+      </form>
+    </div>
+  );
+};
+
+export default UpdateForm;
