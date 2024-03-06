@@ -5,7 +5,6 @@ import { Button, Flex, AlertDialog } from "@radix-ui/themes";
 import Link from "next/link";
 import React from "react";
 import prisma from "@/prisma/client";
-import axios from "axios";
 interface Props {
   issueDetails: Issue;
 }
