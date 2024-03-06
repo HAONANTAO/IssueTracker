@@ -5,7 +5,7 @@ import IssueFormSkeleton from "../components/IssueFormSkeleton";
 
 const IssueForm = dynamic(() => import("../components/IssueForm"), {
   ssr: false,
-  loading: () => <IssueFormSkeleton />,
+  loading: () => <IssueFormSkeleton>,
 });
 
 const NewIssue = () => {
