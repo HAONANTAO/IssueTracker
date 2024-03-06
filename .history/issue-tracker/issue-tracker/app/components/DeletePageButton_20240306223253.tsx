@@ -1,4 +1,3 @@
-"use client";
 import { Issue } from "@prisma/client";
 import { Cross2Icon } from "@radix-ui/react-icons";
 import { Button, Flex, AlertDialog } from "@radix-ui/themes";

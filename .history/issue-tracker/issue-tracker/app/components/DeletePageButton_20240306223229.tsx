@@ -1,7 +1,6 @@
-"use client";
-import { Issue } from "@prisma/client";
+import { Issue, AlertDialog } from "@prisma/client";
 import { Cross2Icon } from "@radix-ui/react-icons";
-import { Button, Flex, AlertDialog } from "@radix-ui/themes";
+import { Button } from "@radix-ui/themes";
 import Link from "next/link";
 import React from "react";
 
