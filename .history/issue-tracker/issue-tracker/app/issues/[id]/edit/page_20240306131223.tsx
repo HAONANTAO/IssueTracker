@@ -12,7 +12,7 @@ const EditPage = async ({ params }: Props) => {
     where: { id: parseInt(params.id) },
   });
   if (!issue) return notFound();
-  return <UpdateForm issue={issue}></UpdateForm>;
+  return <UpdateForm issue={issue} ></Upda>;
 };
 
 export default EditPage;

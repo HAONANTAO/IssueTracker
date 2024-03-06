@@ -37,7 +37,7 @@ const UpdateForm = ({ issue }: { issue?: Issue }) => {
     await delay(1000);
     try {
       Setloading(true);
-      await axios.patch(`/api/issues/${issue!.id}/edit`, data);
+      await axios.patch(`/issues/${issue?.id}/edit`, data);
       router.push("/issues");
     } catch (error) {
       setEerror("an unexpected error occurred!");
