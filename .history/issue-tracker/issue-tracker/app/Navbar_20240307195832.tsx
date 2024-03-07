@@ -3,16 +3,15 @@ import Link from "next/link";
 import React from "react";
 import { FaBug } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
-import { useSession } from "next-auth/react";
-import { Box } from "@radix-ui/themes";
 const Navbar = () => {
-  const currentPath = usePathname();
-  const { status, data: session } = useSession();
+  const currentPath= usePathname();
+  
   // links labels
   const link = [
     { label: "Dashboard", href: "/" },
     { label: "Issue", href: "/issues" },
   ];
+  const currentPath = usePathname();
 
   return (
     <>
@@ -33,15 +32,17 @@ const Navbar = () => {
               </Link>
             </li>
           ))}
+          {/* <li>
+            <Link href="/" className="text-zinc-400 hover:text-zinc-600">
+              Dashboard
+            </Link>
+          </li>
+          <li>
+            <Link href="/issue" className="text-zinc-400 hover:text-zinc-600">
+              Issue
+            </Link>
+          </li> */}
         </ul>
-        <Box>
-          {status === "authenticated" && (
-            <Link href="/api/auth/signout">Logout</Link>
-          )}
-          {status === "unauthenticated" && (
-            <Link href="/api/auth/signin">Login</Link>
-          )}
-        </Box>
       </nav>
     </>
   );

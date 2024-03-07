@@ -34,14 +34,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <Box>
-          {status === "authenticated" && (
-            <Link href="/api/auth/signout">Logout</Link>
-          )}
-          {status === "unauthenticated" && (
-            <Link href="/api/auth/signin">Login</Link>
-          )}
-        </Box>
+        <Box> {status==="authenticated" }</Box>
       </nav>
     </>
   );
