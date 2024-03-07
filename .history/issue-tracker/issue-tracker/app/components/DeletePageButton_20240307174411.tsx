@@ -56,12 +56,12 @@ const DeletePageButton = ({ issueDetails }: Props) => {
           </Flex>
         </AlertDialog.Content>
       </AlertDialog.Root>
-      <AlertDialog.Root open={error}>
+      <AlertDialog.Root>
         <AlertDialog.Content style={{ maxWidth: 450 }}>
-          <AlertDialog.Title>Confirm to Delete </AlertDialog.Title>
           <AlertDialog.Description size="2">
             Can not delete this issue!
           </AlertDialog.Description>
+
           <Button variant="soft" color="gray" onClick={() => setError(false)}>
             Cancel
           </Button>

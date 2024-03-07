@@ -15,7 +15,7 @@ const DeletePageButton = ({ issueDetails }: Props) => {
   const router = useRouter();
   const handleDelete = async () => {
     try {
-      throw new Error();
+      throw Error();
       await axios.delete(`/api/issues/${issueDetails.id}`);
       router.push("/issues");
       router.refresh();
@@ -32,6 +32,7 @@ const DeletePageButton = ({ issueDetails }: Props) => {
             Delete pages
           </Button>
         </AlertDialog.Trigger>
+
         {/* content of dialog */}
         <AlertDialog.Content style={{ maxWidth: 450 }}>
           <AlertDialog.Title>Confirm to Delete </AlertDialog.Title>
@@ -56,17 +57,20 @@ const DeletePageButton = ({ issueDetails }: Props) => {
           </Flex>
         </AlertDialog.Content>
       </AlertDialog.Root>
-      <AlertDialog.Root open={error}>
-        <AlertDialog.Content style={{ maxWidth: 450 }}>
-          <AlertDialog.Title>Confirm to Delete </AlertDialog.Title>
-          <AlertDialog.Description size="2">
-            Can not delete this issue!
-          </AlertDialog.Description>
-          <Button variant="soft" color="gray" onClick={() => setError(false)}>
-            Cancel
-          </Button>
-        </AlertDialog.Content>
-      </AlertDialog.Root>
+
+      {error && (
+        <AlertDialog.Root>
+          <AlertDialog.Content style={{ maxWidth: 450 }}>
+            <AlertDialog.Description size="2">
+              Can not delete this issue!
+            </AlertDialog.Description>
+
+            <Button variant="soft" color="gray" onClick={() => setError(false)}>
+              Cancel
+            </Button>
+          </AlertDialog.Content>
+        </AlertDialog.Root>
+      )}
     </>
   );
 };

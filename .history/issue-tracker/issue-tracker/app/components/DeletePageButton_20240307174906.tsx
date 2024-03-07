@@ -58,6 +58,7 @@ const DeletePageButton = ({ issueDetails }: Props) => {
       </AlertDialog.Root>
       <AlertDialog.Root open={error}>
         <AlertDialog.Content style={{ maxWidth: 450 }}>
+          {" "}
           <AlertDialog.Title>Confirm to Delete </AlertDialog.Title>
           <AlertDialog.Description size="2">
             Can not delete this issue!
