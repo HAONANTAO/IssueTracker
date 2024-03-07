@@ -16,26 +16,25 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className="border-b space-x-4 px-2 py-2 mb-2 ">
-        <Flex justify="between">
-          <Flex align="center" gap="3">
-            <Link href="/">
-              <FaBug />
-            </Link>
-            <ul className="flex space-x-4 ">
-              {link.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    href={l.href}
-                    className={`hover:text-zinc-600 transition-colors ${
-                      currentPath === l.href ? "text-zinc-800" : "text-zinc-400"
-                    }`}>
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </Flex>
+      <nav className="flex  border-b space-x-4 px-2 py-2 mb-2 items-center">
+        <Flex>
+          <Box>
+          <Link href="/">
+            <FaBug />
+          </Link>
+          <ul className="flex space-x-4 ">
+            {link.map((l) => (
+              <li key={l.label}>
+                <Link
+                  href={l.href}
+                  className={`hover:text-zinc-600 transition-colors ${
+                    currentPath === l.href ? "text-zinc-800" : "text-zinc-400"
+                  }`}>
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
           <Box>
             {status === "authenticated" && (
               <Link href="/api/auth/signout">Logout</Link>
@@ -43,7 +42,7 @@ const Navbar = () => {
             {status === "unauthenticated" && (
               <Link href="/api/auth/signin">Login</Link>
             )}
-          </Box>
+          </Box>{" "}
         </Flex>
       </nav>
     </>

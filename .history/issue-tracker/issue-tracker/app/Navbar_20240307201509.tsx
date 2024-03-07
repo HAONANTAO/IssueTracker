@@ -17,8 +17,8 @@ const Navbar = () => {
   return (
     <>
       <nav className="border-b space-x-4 px-2 py-2 mb-2 ">
-        <Flex justify="between">
-          <Flex align="center" gap="3">
+        <Flex className="justify-between max">
+          <Flex>
             <Link href="/">
               <FaBug />
             </Link>

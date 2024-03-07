@@ -17,8 +17,8 @@ const Navbar = () => {
   return (
     <>
       <nav className="border-b space-x-4 px-2 py-2 mb-2 ">
-        <Flex justify="between">
-          <Flex align="center" gap="3">
+        <Flex className="justify-between">
+          <Flex>
             <Link href="/">
               <FaBug />
             </Link>
@@ -36,14 +36,6 @@ const Navbar = () => {
               ))}
             </ul>
           </Flex>
-          <Box>
-            {status === "authenticated" && (
-              <Link href="/api/auth/signout">Logout</Link>
-            )}
-            {status === "unauthenticated" && (
-              <Link href="/api/auth/signin">Login</Link>
-            )}
-          </Box>
         </Flex>
       </nav>
     </>

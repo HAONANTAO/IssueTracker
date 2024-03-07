@@ -18,7 +18,7 @@ const Navbar = () => {
     <>
       <nav className="border-b space-x-4 px-2 py-2 mb-2 ">
         <Flex justify="between">
-          <Flex align="center" gap="3">
+          <Flex align="center">
             <Link href="/">
               <FaBug />
             </Link>
