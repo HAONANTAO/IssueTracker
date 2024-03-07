@@ -4,14 +4,19 @@ import React from "react";
 
 const AssigneeSelect = () => {
   return (
-    <Select.Root>
-      <Select.Trigger placeholder="Assign Issue..." />
+    <Select.Root defaultValue="Assign the Issue...">
+      <Select.Trigger />
       <Select.Content>
         <Select.Group>
-          <Select.Label>Members</Select.Label>
+          <Select.Label>Fruits</Select.Label>
           <Select.Item value="Aaron">Aaron</Select.Item>
         </Select.Group>
         <Select.Separator />
+        <Select.Group>
+          <Select.Label>Vegetables</Select.Label>
+          <Select.Item value="carrot">Carrot</Select.Item>
+          <Select.Item value="potato">Potato</Select.Item>
+        </Select.Group>
       </Select.Content>
     </Select.Root>
   );

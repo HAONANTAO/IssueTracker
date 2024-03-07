@@ -4,8 +4,8 @@ import React from "react";
 
 const AssigneeSelect = () => {
   return (
-    <Select.Root>
-      <Select.Trigger placeholder="Assign Issue..." />
+    <Select.Root >
+      <Select.Trigger placeholder="Assign"/>
       <Select.Content>
         <Select.Group>
           <Select.Label>Members</Select.Label>

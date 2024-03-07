@@ -33,9 +33,8 @@ const IssueDetailsPage = async ({ params }: Props) => {
           <IssueDetails issueDetails={issueDetails}></IssueDetails>
         </Box>
         <Box className=" space-x-4 px-4 ">
+          <AssigneeSelect></AssigneeSelect>
           <Flex direction="column" gap="4">
-            {" "}
-            <AssigneeSelect></AssigneeSelect>
             <EditPageButton issueDetails={issueDetails}></EditPageButton>
             {session && (
               <DeletePageButton issueDetails={issueDetails}></DeletePageButton>
