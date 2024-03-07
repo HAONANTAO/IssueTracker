@@ -12,7 +12,6 @@ const AssigneeSelect = () => {
       setUsers(data);
       return data;
     };
-    getUsers();
   }, []);
   return (
     <Select.Root>

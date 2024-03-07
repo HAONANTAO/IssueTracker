@@ -9,10 +9,10 @@ const AssigneeSelect = () => {
   useEffect(() => {
     const getUsers = async () => {
       const { data } = await axios.get<User[]>("/api/users");
-      setUsers(data);
       return data;
     };
-    getUsers();
+    const data = getUsers();
+    setUsers(data);
   }, []);
   return (
     <Select.Root>
@@ -20,11 +20,7 @@ const AssigneeSelect = () => {
       <Select.Content>
         <Select.Group>
           <Select.Label>Members</Select.Label>
-          {users.map((u) => (
-            <Select.Item key={u.id} value={u.id}>
-              {u.name}
-            </Select.Item>
-          ))}
+          <Select.Item value="Aaron">Aaron</Select.Item>
         </Select.Group>
         <Select.Separator />
       </Select.Content>

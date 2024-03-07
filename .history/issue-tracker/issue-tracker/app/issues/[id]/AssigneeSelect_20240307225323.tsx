@@ -12,7 +12,6 @@ const AssigneeSelect = () => {
       setUsers(data);
       return data;
     };
-    getUsers();
   }, []);
   return (
     <Select.Root>
@@ -20,10 +19,8 @@ const AssigneeSelect = () => {
       <Select.Content>
         <Select.Group>
           <Select.Label>Members</Select.Label>
-          {users.map((u) => (
-            <Select.Item key={u.id} value={u.id}>
-              {u.name}
-            </Select.Item>
+          {users.map(() => (
+            <Select.Item key={users.id}>{users.name}</Select.Item>
           ))}
         </Select.Group>
         <Select.Separator />
