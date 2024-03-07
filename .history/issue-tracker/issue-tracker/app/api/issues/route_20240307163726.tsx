@@ -20,5 +20,24 @@ export async function POST(request: NextRequest) {
   });
 }
 
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: { id: number } },
+) {
+  const issue = await prisma.issue.findUnique({
+    where: { id: params.id },
+  });
 
+  if (!issue)
+    return NextResponse.json({ error: "failed to delete" }, { status: 400 });
+  const deletedIssue = await prisma.issue.delete({
+    where: { id: issue.id },
+  });
+  return NextResponse.json({ msg: "successfully delete", deletedIssue });
+}
 
+export async function GET({ params }: { params: { id: string } }) {
+  const issue = prisma.issue.findUnique({
+    where: { id: parseInt()params.id },
+  });
+}

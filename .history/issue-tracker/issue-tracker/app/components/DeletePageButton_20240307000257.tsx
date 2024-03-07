@@ -39,7 +39,7 @@ const DeletePageButton = ({ issueDetails }: Props) => {
               variant="solid"
               color="red"
               onClick={async () => {
-                // console.log(`/api/issues/${issueDetails.id}`);
+                console.log(object)
                 await axios.delete(`/api/issues/${issueDetails.id}`);
                 router.push("/issues");
                 router.refresh();
