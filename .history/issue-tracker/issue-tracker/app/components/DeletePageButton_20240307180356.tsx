@@ -33,8 +33,9 @@ const DeletePageButton = ({ issueDetails }: Props) => {
         <AlertDialog.Trigger>
           <Button color="red" disabled={deleting}>
             <Cross2Icon></Cross2Icon>
-            Delete pages {deleting && <Spinner></Spinner>}
+            Delete pages
           </Button>
+          {deleting && Spinner}
         </AlertDialog.Trigger>
         {/* content of dialog */}
         <AlertDialog.Content style={{ maxWidth: 450 }}>

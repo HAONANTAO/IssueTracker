@@ -14,16 +14,15 @@ interface Props {
 const DeletePageButton = ({ issueDetails }: Props) => {
   const [error, setError] = useState(false);
   const router = useRouter();
-  const [deleting, setDeleting] = useState(false);
+  const [spinner, setSpinner] = useState(false);
   const handleDelete = async () => {
     try {
       // throw new Error();
       await axios.delete(`/api/issues/${issueDetails.id}`);
-      setDeleting(true);
+    
       router.push("/issues");
       router.refresh();
     } catch (error) {
-      setDeleting(false);
       setError(true);
     }
   };
@@ -31,9 +30,9 @@ const DeletePageButton = ({ issueDetails }: Props) => {
     <>
       <AlertDialog.Root>
         <AlertDialog.Trigger>
-          <Button color="red" disabled={deleting}>
+          <Button color="red">
             <Cross2Icon></Cross2Icon>
-            Delete pages {deleting && <Spinner></Spinner>}
+            Delete pages
           </Button>
         </AlertDialog.Trigger>
         {/* content of dialog */}
