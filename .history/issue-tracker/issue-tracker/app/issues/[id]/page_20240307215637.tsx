@@ -11,13 +11,12 @@ import IssueDetails from "../../components/IssueDetails";
 import EditPageButton from "@/app/components/EditPageButton";
 import DeletePageButton from "@/app/components/DeletePageButton";
 import { getServerSession } from "next-auth";
-import AuthOptions from "@/app/auth/AuthOptions";
 interface Props {
   params: { id: string };
 }
 
 const IssueDetailsPage = async ({ params }: Props) => {
-  const session = await getServerSession(AuthOptions);
+  const session = getServerSession(Au);
   await delay(2000);
   // if (typeof parseInt(params.id) !== "number") return notFound();
   const issueDetails = await prisma.issue.findUnique({
