@@ -56,31 +56,33 @@ const RenderLink = () => {
 const Profile = () => {
   const { status, data: session } = useSession();
 
-  if (status === "loading")
-    return <Skeleton width="3rem" height="2rem"></Skeleton>;
-  if (status === "unauthenticated")
-    return <Link href="/api/auth/signin">Login</Link>;
-
+  if(status === "loading")return <Skeleton></Skeleton>;
+  if(status === "unauthenticated") return  <Link href="/api/auth/signin">Login</Link>
+  if()
   return (
     <Box>
-      <DropdownMenu.Root>
-        <DropdownMenu.Trigger>
-          <Avatar
-            src={session!.user!.image!}
-            fallback="?"
-            size="3"
-            radius="full"
-            className="cursor-pointer"></Avatar>
-        </DropdownMenu.Trigger>
-        <DropdownMenu.Content>
-          {session!.user?.name}
-          <br />
-          {session!.user?.email}
-          <Button variant="soft">
-            <Link href="/api/auth/signout">Logout</Link>
-          </Button>
-        </DropdownMenu.Content>
-      </DropdownMenu.Root>
+   
+      (
+        <DropdownMenu.Root>
+          <DropdownMenu.Trigger>
+            <Avatar
+              src={session.user!.image!}
+              fallback="?"
+              size="3"
+              radius="full"
+              className="cursor-pointer"></Avatar>
+          </DropdownMenu.Trigger>
+          <DropdownMenu.Content>
+            {session.user?.name}
+            <br />
+            {session.user?.email}
+
+            <Button variant="soft">
+              <Link href="/api/auth/signout">Logout</Link>
+            </Button>
+          </DropdownMenu.Content>
+        </DropdownMenu.Root>
+      )
     </Box>
   );
 };
