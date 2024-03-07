@@ -18,7 +18,6 @@ const DeletePageButton = ({ issueDetails }: Props) => {
   const handleDelete = async () => {
     try {
       // throw new Error();
-      await delay(3000);
       await axios.delete(`/api/issues/${issueDetails.id}`);
       setDeleting(true);
       router.push("/issues");
