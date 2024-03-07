@@ -5,11 +5,9 @@ import { Skeleton } from "../components/Loading";
 const IssueFormSkeleton = () => {
   return (
     <>
+    <div className="items-center"></div>
+      <Skeleton width="150px" />
       <Box className="max-w-xl">
-        {" "}
-        <div className="flex  justify-center">
-          <Skeleton width="150px" />
-        </div>
         <Skeleton />
         <Skeleton height="20rem" />
       </Box>

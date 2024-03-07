@@ -7,7 +7,7 @@ const IssueFormSkeleton = () => {
     <>
       <Box className="max-w-xl">
         {" "}
-        <div className="flex  justify-center">
+        <div className="flex items-center justify-center">
           <Skeleton width="150px" />
         </div>
         <Skeleton />
