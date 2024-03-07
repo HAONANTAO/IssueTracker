@@ -53,9 +53,7 @@ const Navbar = () => {
                       radius="full"
                       className="cursor-pointer"></Avatar>
                   </DropdownMenu.Trigger>
-                  <DropdownMenu.Content>
-                    {session.user?.email}
-                  </DropdownMenu.Content>
+                  <DropdownMenu.Content></DropdownMenu.Content>
                   <Link href="/api/auth/signout">Logout</Link>
                 </DropdownMenu.Root>
               )}

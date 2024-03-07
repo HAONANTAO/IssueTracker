@@ -45,17 +45,13 @@ const Navbar = () => {
               )}
               {status === "authenticated" && (
                 <DropdownMenu.Root>
-                  <DropdownMenu.Trigger>
-                    <Avatar
-                      src={session.user!.image!}
-                      fallback="?"
-                      size="3"
-                      radius="full"
-                      className="cursor-pointer"></Avatar>
-                  </DropdownMenu.Trigger>
-                  <DropdownMenu.Content>
-                    {session.user?.email}
-                  </DropdownMenu.Content>
+                   <DropdownMenu.Trigger></DropdownMenu.Trigger>
+                  <Avatar
+                    src={session.user!.image!}
+                    fallback="?"
+                    size="3"
+                    radius="full"
+                    className="cursor-pointer"></Avatar>
                   <Link href="/api/auth/signout">Logout</Link>
                 </DropdownMenu.Root>
               )}
