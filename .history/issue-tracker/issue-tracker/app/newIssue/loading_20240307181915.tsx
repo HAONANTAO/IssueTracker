@@ -3,7 +3,9 @@ import React from "react";
 
 import { Skeleton } from "../components/Loading";
 const loading = () => {
-  return <>{/* loading page in <IssueFormSkeleton /> */}</>;
+  return <Box>
+    <Skele
+  </Box>;
 };
 
 export default loading;
