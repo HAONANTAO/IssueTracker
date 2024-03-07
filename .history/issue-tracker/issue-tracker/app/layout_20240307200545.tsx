@@ -26,16 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.variable}>
-        <AuthProvider>
-          <Theme>
-            <Navbar></Navbar>
-            {/* moving the children into the main part, more semantic */}
+        <AuthProvider></AuthProvider>
+        <Theme>
+          <Navbar></Navbar>
+          {/* moving the children into the main part, more semantic */}
 
-            <main>
-              <Container> {children}</Container>
-            </main>
-          </Theme>
-        </AuthProvider>
+          <main>
+            <Container> {children}</Container>
+          </main>
+        </Theme>
       </body>
     </html>
   );
