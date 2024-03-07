@@ -12,7 +12,7 @@ export async function DELETE(
 
   if (!issue)
     return NextResponse.json({ error: "failed to delete" }, { status: 400 });
-  const deletedIssue = await prisma.issue.delete({
+  await prisma.issue.delete({
     where: { id: issue.id },
   });
   return NextResponse.json({ msg: "successfully delete" });
