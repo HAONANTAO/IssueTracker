@@ -12,13 +12,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBug } from "react-icons/fa6";
 const Navbar = () => {
+ 
   return (
     <>
       <nav className="border-b space-x-4 px-2 py-2 mb-2 ">
         <Container>
           <Flex justify="between">
             <RenderLink />
-            <Profile />
           </Flex>
         </Container>
       </nav>
@@ -53,8 +53,6 @@ const RenderLink = () => {
   );
 };
 const Profile = () => {
-  const { status, data: session } = useSession();
-
   return (
     <Box>
       {status === "unauthenticated" && (

@@ -18,7 +18,6 @@ const Navbar = () => {
         <Container>
           <Flex justify="between">
             <RenderLink />
-            <Profile />
           </Flex>
         </Container>
       </nav>
