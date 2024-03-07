@@ -12,7 +12,7 @@ const IssueFormSkeleton = () => {
         </div>
         <Skeleton />
         <Skeleton height="20rem" />
-        <div className="mt-4">
+        <div className="m">
           <Skeleton />
         </div>
       </Box>

@@ -12,10 +12,8 @@ const IssueFormSkeleton = () => {
         </div>
         <Skeleton />
         <Skeleton height="20rem" />
-        <div className="mt-4">
-          <Skeleton />
-        </div>
       </Box>
+      <Skeleton height="20rem" />
     </>
   );
 };

@@ -11,11 +11,9 @@ const IssueFormSkeleton = () => {
           <Skeleton width="150px" />
         </div>
         <Skeleton />
-        <Skeleton height="20rem" />
-        <div className="mt-4">
-          <Skeleton />
-        </div>
+        <Skeleton height="20rem" />{" "}
       </Box>
+      <Skeleton />
     </>
   );
 };
