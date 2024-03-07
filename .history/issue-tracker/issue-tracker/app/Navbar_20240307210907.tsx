@@ -12,6 +12,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBug } from "react-icons/fa6";
 const Navbar = () => {
+ 
   const { status, data: session } = useSession();
   // links labels
 
@@ -53,7 +54,6 @@ const Navbar = () => {
   );
 };
 const RenderLink = () => {
-  const currentPath = usePathname();
   const link = [
     { label: "Dashboard", href: "/" },
     { label: "Issue", href: "/issues" },

@@ -12,8 +12,10 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaBug } from "react-icons/fa6";
 const Navbar = () => {
+  const currentPath = usePathname();
   const { status, data: session } = useSession();
   // links labels
+  
 
   return (
     <>
@@ -53,30 +55,28 @@ const Navbar = () => {
   );
 };
 const RenderLink = () => {
-  const currentPath = usePathname();
   const link = [
     { label: "Dashboard", href: "/" },
     { label: "Issue", href: "/issues" },
   ];
-  return (
-    <Flex align="center" gap="3">
-      <Link href="/">
-        <FaBug />
-      </Link>
-      <ul className="flex space-x-4 ">
-        {link.map((l) => (
-          <li key={l.label}>
-            <Link
-              href={l.href}
-              className={`hover:text-zinc-600 transition-colors ${
-                currentPath === l.href ? "text-zinc-800" : "text-zinc-400"
-              }`}>
-              {l.label}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </Flex>
-  );
+  return()_
+  <Flex align="center" gap="3">
+    <Link href="/">
+      <FaBug />
+    </Link>
+    <ul className="flex space-x-4 ">
+      {link.map((l) => (
+        <li key={l.label}>
+          <Link
+            href={l.href}
+            className={`hover:text-zinc-600 transition-colors ${
+              currentPath === l.href ? "text-zinc-800" : "text-zinc-400"
+            }`}>
+            {l.label}
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </Flex>;
 };
 export default Navbar;
