@@ -4,7 +4,7 @@ import { Select } from "@radix-ui/themes";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Skeleton } from "@/app/components/Loading";
+import Skeleton from "@/app/components/";
 
 //use queryFn fetch data and store in cache!!!(client side)
 const AssigneeSelect = () => {

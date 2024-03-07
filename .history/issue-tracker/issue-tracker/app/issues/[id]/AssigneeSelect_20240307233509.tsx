@@ -4,7 +4,6 @@ import { Select } from "@radix-ui/themes";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { Skeleton } from "@/app/components/Loading";
 
 //use queryFn fetch data and store in cache!!!(client side)
 const AssigneeSelect = () => {
@@ -18,8 +17,6 @@ const AssigneeSelect = () => {
     staleTime: 60 * 1000, //60s
     retry: 3, // up to 3 times
   });
-  if (isLoading) return <Skeleton></Skeleton>;
-  if (error) return null;
   // const [users, setUsers] = useState<User[]>([]);
   // useEffect(() => {
   //   const getUsers = async () => {

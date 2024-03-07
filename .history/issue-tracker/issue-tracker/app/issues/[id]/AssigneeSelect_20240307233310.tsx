@@ -1,26 +1,37 @@
 "use client";
 import { User } from "@prisma/client";
 import { Select } from "@radix-ui/themes";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
+//use queryFn fetch data and store in cache!!!(client side)
 const AssigneeSelect = () => {
-  const [users, setUsers] = useState<User[]>([]);
-  useEffect(() => {
-    const getUsers = async () => {
-      const { data } = await axios.get<User[]>("/api/users");
-      setUsers(data);
-      return data;
-    };
-    getUsers();
-  }, []);
+  const {
+    data: users,
+    error,
+    isLoading,
+  } = useQuery<User[]>({
+    queryKey: ["users"],
+    queryFn: () => axios.get("/api/users").then((res) => res.data),
+    staleTime,
+  });
+  // const [users, setUsers] = useState<User[]>([]);
+  // useEffect(() => {
+  //   const getUsers = async () => {
+  //     const { data } = await axios.get<User[]>("/api/users");
+  //     setUsers(data);
+  //     return data;
+  //   };
+  //   getUsers();
+  // }, []);
   return (
     <Select.Root>
       <Select.Trigger placeholder="Assign Issue..." />
       <Select.Content>
         <Select.Group>
           <Select.Label>Members</Select.Label>
-          {users.map((u) => (
+          {users?.map((u) => (
             <Select.Item key={u.id} value={u.id}>
               {u.name}
             </Select.Item>

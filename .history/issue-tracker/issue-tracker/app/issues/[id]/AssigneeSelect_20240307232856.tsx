@@ -1,11 +1,21 @@
 "use client";
 import { User } from "@prisma/client";
 import { Select } from "@radix-ui/themes";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
+//use queryFn fetch data and store in cache
 const AssigneeSelect = () => {
-  const [users, setUsers] = useState<User[]>([]);
+  const {
+    data: users,
+    error,
+    isLoading,
+  } = useQuery({
+    queryKey: ["users"],
+    queryFn: () => axios.get("/api/users").then((res) => res.data),
+  });
+  // const [users, setUsers] = useState<User[]>([]);
   useEffect(() => {
     const getUsers = async () => {
       const { data } = await axios.get<User[]>("/api/users");
