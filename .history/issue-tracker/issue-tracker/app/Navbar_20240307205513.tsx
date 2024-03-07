@@ -62,7 +62,6 @@ const Navbar = () => {
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content>
                     {session.user?.name}
-                    <br />
                     {session.user?.email}
 
                     <Button variant="soft">

@@ -61,14 +61,12 @@ const Navbar = () => {
                       className="cursor-pointer"></Avatar>
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content>
-                    {session.user?.name}
-                    <br />
                     {session.user?.email}
-
-                    <Button variant="soft">
-                      <Link href="/api/auth/signout">Logout</Link>
-                    </Button>
                   </DropdownMenu.Content>
+                  <Button variant="soft">
+                    {" "}
+                    <Link href="/api/auth/signout">Logout</Link>
+                  </Button>
                 </DropdownMenu.Root>
               )}
             </Box>

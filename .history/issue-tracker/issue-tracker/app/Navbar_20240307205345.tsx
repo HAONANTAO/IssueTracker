@@ -4,14 +4,7 @@ import React from "react";
 import { FaBug } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
-import {
-  Avatar,
-  Box,
-  Button,
-  Container,
-  DropdownMenu,
-  Flex,
-} from "@radix-ui/themes";
+import { Avatar, Box, Container, DropdownMenu, Flex } from "@radix-ui/themes";
 const Navbar = () => {
   const currentPath = usePathname();
   const { status, data: session } = useSession();
@@ -61,14 +54,13 @@ const Navbar = () => {
                       className="cursor-pointer"></Avatar>
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content>
-                    {session.user?.name}
-                    <br />
                     {session.user?.email}
-
-                    <Button variant="soft">
-                      <Link href="/api/auth/signout">Logout</Link>
-                    </Button>
-                  </DropdownMenu.Content>
+                  </DropdownMenu.Content>{" "}
+                  <Button variant="soft">
+                    Options
+                    <CaretDownIcon />
+                  </Button>
+                  <Link href="/api/auth/signout">Logout</Link>
                 </DropdownMenu.Root>
               )}
             </Box>

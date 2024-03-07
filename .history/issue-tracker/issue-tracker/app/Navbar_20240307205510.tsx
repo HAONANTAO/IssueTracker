@@ -61,10 +61,8 @@ const Navbar = () => {
                       className="cursor-pointer"></Avatar>
                   </DropdownMenu.Trigger>
                   <DropdownMenu.Content>
-                    {session.user?.name}
-                    <br />
                     {session.user?.email}
-
+                    {session.user?.name}
                     <Button variant="soft">
                       <Link href="/api/auth/signout">Logout</Link>
                     </Button>
