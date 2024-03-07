@@ -50,7 +50,7 @@ const Navbar = () => {
                     fallback="?"
                     size="3"
                     radius="full"
-                    className="cursor-pointer"></Avatar>
+                    ></Avatar>
                   <Link href="/api/auth/signout">Logout</Link>
                 </DropdownMenu.Root>
               )}

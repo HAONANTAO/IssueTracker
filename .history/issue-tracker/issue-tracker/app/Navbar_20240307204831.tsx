@@ -48,9 +48,7 @@ const Navbar = () => {
                   <Avatar
                     src={session.user!.image!}
                     fallback="?"
-                    size="3"
-                    radius="full"
-                    className="cursor-pointer"></Avatar>
+                    size={2}></Avatar>
                   <Link href="/api/auth/signout">Logout</Link>
                 </DropdownMenu.Root>
               )}

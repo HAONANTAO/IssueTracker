@@ -4,7 +4,7 @@ import React from "react";
 import { FaBug } from "react-icons/fa6";
 import { usePathname } from "next/navigation";
 import { useSession } from "next-auth/react";
-import { Avatar, Box, Container, DropdownMenu, Flex } from "@radix-ui/themes";
+import { Box, Container, Flex } from "@radix-ui/themes";
 const Navbar = () => {
   const currentPath = usePathname();
   const { status, data: session } = useSession();
@@ -44,15 +44,7 @@ const Navbar = () => {
                 <Link href="/api/auth/signin">Login</Link>
               )}
               {status === "authenticated" && (
-                <DropdownMenu.Root>
-                  <Avatar
-                    src={session.user!.image!}
-                    fallback="?"
-                    size="3"
-                    radius="full"
-                    className="cursor-pointer"></Avatar>
-                  <Link href="/api/auth/signout">Logout</Link>
-                </DropdownMenu.Root>
+                <Link href="/api/auth/signout">Logout</Link>
               )}
             </Box>
           </Flex>
