@@ -16,7 +16,6 @@ export const PatchValidationSchema = z.object({
   assignedToUserId: z
     .string()
     .min(1, "required the assigned user id")
-    .max(255)
-    .nullable()
+    .max(255).nullable(),
     .optional(),
 });

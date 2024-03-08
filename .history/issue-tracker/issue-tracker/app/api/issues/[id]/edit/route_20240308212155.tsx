@@ -43,7 +43,7 @@ export async function PATCH(
     },
   });
 
-  return NextResponse.json(updatedIssue);
+  return NextResponse.json(UpdateIssue);
 }
 export async function DELETE(
   request: NextRequest,

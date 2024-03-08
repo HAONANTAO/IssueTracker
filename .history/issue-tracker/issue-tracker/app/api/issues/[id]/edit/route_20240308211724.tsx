@@ -34,16 +34,12 @@ export async function PATCH(
       { status: 400 },
     );
 
-  const updatedIssue = await prisma.issue.update({
+  const UpdateIssue = await prisma.issue.update({
     where: { id: issue.id },
-    data: {
-      title,
-      description,
-      assignedToUserId,
-    },
+    data: { title, description, assignedToUserId },
   });
 
-  return NextResponse.json(updatedIssue);
+  return NextResponse.json(UpdateIssue);
 }
 export async function DELETE(
   request: NextRequest,

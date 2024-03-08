@@ -33,17 +33,13 @@ export async function PATCH(
       { msg: "unexpected error : can not found!" },
       { status: 400 },
     );
-
-  const updatedIssue = await prisma.issue.update({
+  return NextResponse.json({typeof assi})
+  const UpdateIssue = await prisma.issue.update({
     where: { id: issue.id },
-    data: {
-      title,
-      description,
-      assignedToUserId,
-    },
+    data: { title, description, assignedToUserId },
   });
 
-  return NextResponse.json(updatedIssue);
+  return NextResponse.json(UpdateIssue);
 }
 export async function DELETE(
   request: NextRequest,

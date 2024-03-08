@@ -34,16 +34,24 @@ export async function PATCH(
       { status: 400 },
     );
 
-  const updatedIssue = await prisma.issue.update({
-    where: { id: issue.id },
-    data: {
-      title,
-      description,
-      assignedToUserId,
-    },
-  });
-
-  return NextResponse.json(updatedIssue);
+  try {
+    const UpdateIssue = await prisma.issue.update({
+      where: { id: issue.id },
+      data: {
+        title: title || undefined,
+        description: description || undefined,
+        assignedToUserId: assignedToUserId || undefined,
+      },
+    });
+    return NextResponse.json(UpdateIssue);
+  } catch (error) {
+    console.error("Prisma Update Error:", error);
+    return NextResponse.json(
+      { error: "Failed to update issue", details: error },
+      { status: 500 },
+    );
+  }
+  // return NextResponse.json(UpdateIssue);
 }
 export async function DELETE(
   request: NextRequest,

@@ -39,7 +39,7 @@ export async function PATCH(
     data: {
       title,
       description,
-      assignedToUserId,
+      assignedToUser: { connect: { id: assignedToUserId } },
     },
   });
 

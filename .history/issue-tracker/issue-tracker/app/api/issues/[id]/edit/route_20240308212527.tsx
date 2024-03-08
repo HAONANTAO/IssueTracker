@@ -33,7 +33,7 @@ export async function PATCH(
       { msg: "unexpected error : can not found!" },
       { status: 400 },
     );
-
+prisma.i
   const updatedIssue = await prisma.issue.update({
     where: { id: issue.id },
     data: {
