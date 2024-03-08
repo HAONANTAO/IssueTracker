@@ -8,7 +8,7 @@ export async function PATCH(
   const body = await request.json();
   const id = parseInt(params.id);
 
-  const validation = PatchValidationSchema.safeParse(body);
+  const validation = ValidationSchema.safeParse(body);
   if (!validation.success)
     return NextResponse.json(validation.error.errors, { status: 400 });
 

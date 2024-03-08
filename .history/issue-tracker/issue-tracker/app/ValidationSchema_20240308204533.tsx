@@ -7,11 +7,7 @@ export const ValidationSchema = z.object({
 });
 
 export const PatchValidationSchema = z.object({
-  title: z.string().min(1, "title is required").max(255).optional(),
-  description: z.string().min(2, "description is required").max(255).optional(),
-  assignedToUserId: z
-    .string()
-    .min(1, "required the assigned user id")
-    .max(255)
-    .optional(),
+  title: z.string().min(1, "title is required").max(255),
+  description: z.string().min(2, "description is required").max(255),
+  assignedToUserId: z.string().min(1, "required the assigned user"),
 });
