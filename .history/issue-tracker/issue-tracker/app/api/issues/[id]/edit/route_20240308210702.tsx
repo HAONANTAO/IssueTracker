@@ -26,7 +26,7 @@ export async function PATCH(
 
     if (!ValidedUser)
       return NextResponse.json({ msg: "not a valid user" }, { status: 400 });
-    return NextResponse.json(ValidedUser);
+    return NextResponse.json( ValidedUser });
   }
 
   if (!issue)

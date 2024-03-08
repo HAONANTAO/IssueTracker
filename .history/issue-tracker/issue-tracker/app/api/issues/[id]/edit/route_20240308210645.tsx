@@ -23,12 +23,10 @@ export async function PATCH(
     const ValidedUser = await prisma.user.findUnique({
       where: { id: assignedToUserId },
     });
-
     if (!ValidedUser)
       return NextResponse.json({ msg: "not a valid user" }, { status: 400 });
-    return NextResponse.json(ValidedUser);
   }
-
+  return NextResponse.json({ ValidedUser });
   if (!issue)
     return NextResponse.json(
       { msg: "unexpected error : can not found!" },
