@@ -11,19 +11,12 @@ export async function PATCH(
   const validation = PatchValidationSchema.safeParse(body);
   if (!validation.success)
     return NextResponse.json(validation.error.errors, { status: 400 });
-  const { assignedToUserId, title, description } = body;
-  const issue = await prisma.issue.findUnique({
+  const { assignedToUserId,title,description};
+  const issue = await prisma?.issue.findUnique({
     where: {
       id: id,
     },
   });
-  if (assignedToUserId) {
-    const ValidedUser = await prisma.user.findUnique({
-      where: { id: assignedToUserId },
-    });
-    if (!ValidedUser)
-      return NextResponse.json({ msg: "not a valid user" }, { status: 400 });
-  }
 
   if (!issue)
     return NextResponse.json(
@@ -33,7 +26,7 @@ export async function PATCH(
 
   const UpdateIssue = await prisma?.issue.update({
     where: { id: issue.id },
-    data: { title: title, description: description },
+    data: { title: body.title, description: body.description },
   });
 
   return NextResponse.json(UpdateIssue);

@@ -17,14 +17,12 @@ export async function PATCH(
       id: id,
     },
   });
-  if (assignedToUserId) {
-    const ValidedUser = await prisma.user.findUnique({
-      where: { id: assignedToUserId },
-    });
-    if (!ValidedUser)
-      return NextResponse.json({ msg: "not a valid user" }, { status: 400 });
-  }
-
+  if(assignedToUserId){}
+  const ValidedUser = await prisma.user.findUnique({
+    where: { id: assignedToUserId },
+  });
+  if (!ValidedUser)
+    return NextResponse.json({ msg: "not a valid user" }, { status: 400 });
   if (!issue)
     return NextResponse.json(
       { msg: "unexpected error : can not found!" },
