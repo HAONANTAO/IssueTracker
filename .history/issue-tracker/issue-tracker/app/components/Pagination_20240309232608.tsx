@@ -18,7 +18,7 @@ const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
   if (pageCount <= 1) return null;
   return (
     <Flex align="center" gap="2">
-      <Text size="2">
+      <Text size="4">
         Page {currentPage} of {pageCount}
       </Text>{" "}
       <Button color="gray" variant="soft" disabled={pageCount === pageCount}>
