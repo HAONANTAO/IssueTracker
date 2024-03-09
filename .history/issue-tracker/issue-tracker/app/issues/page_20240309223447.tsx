@@ -22,7 +22,7 @@ interface Props {
 
 const columns: { label: string; value: keyof Issue; className?: string }[] = [
   { label: "Issue", value: "title" },
-  { label: "Status", value: "status", className: "hidden md:table cell" },
+  { label: "Status", value: "status", className: "hidden" },
   { label: "CreatedAt", value: "createdAt", className: "" },
 ];
 const IssuesPage = async ({ searchParams }: Props) => {
@@ -47,7 +47,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
         <TableHeader>
           <TableRow>
             {columns.map((i) => (
-              <TableColumnHeaderCell className={i.className} key={i.value}>
+              <TableColumnHeaderCell key={i.value}>
                 <Link href={{ query: { ...searchParams, orderBy: i.value } }}>
                   {i.label}
                   {i.value === searchParams.orderBy && (
