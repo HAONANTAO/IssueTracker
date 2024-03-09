@@ -13,15 +13,11 @@ import StatusBadge from "../components/StatusBadge";
 
 import NewIssueButton from "./NewIssueButton";
 import { Status } from "@prisma/client";
-const IssuesPage = async ({
-  searchParams,
-}: {
-  searchParams: { status: Status };
-}) => {
+const IssuesPage = async ({ searchparams }: { params: { status: Status } }) => {
   const issues = await prisma.issue.findMany({
-    where: { status: searchParams.status },
+    where: { status: params.status },
   });
-  console.log(searchParams);
+  console.log(params);
 
   await delay(1000);
   return (
