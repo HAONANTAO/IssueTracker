@@ -16,7 +16,7 @@ const IssueStatusFilter = () => {
   const searchParams = useSearchParams();
   return (
     <Select.Root
-      defaultValue={searchParams.get("status")|| undefined}
+      defaultValue={searchParams.get("status")|| unde}
       onValueChange={(status) => {
         //
         const orderByparams = searchParams.get("orderBy");
