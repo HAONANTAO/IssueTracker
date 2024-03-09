@@ -17,8 +17,7 @@ const IssuesPage = async ({ params }: { params: { status: Status } }) => {
   const issues = await prisma.issue.findMany({
     where: { status: params.status },
   });
-  console.log(params.status);
-
+  console.log(object)
   await delay(1000);
   return (
     <div className="px-2 mx-2">

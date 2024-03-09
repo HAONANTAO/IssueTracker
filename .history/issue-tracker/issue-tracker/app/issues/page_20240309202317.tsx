@@ -18,7 +18,7 @@ const IssuesPage = async ({ params }: { params: { status: Status } }) => {
     where: { status: params.status },
   });
   console.log(params.status);
-
+  console.log(issues);
   await delay(1000);
   return (
     <div className="px-2 mx-2">

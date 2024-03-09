@@ -12,13 +12,8 @@ import SelfLink from "../components/SelfLink";
 import StatusBadge from "../components/StatusBadge";
 
 import NewIssueButton from "./NewIssueButton";
-import { Status } from "@prisma/client";
-const IssuesPage = async ({ params }: { params: { status: Status } }) => {
-  const issues = await prisma.issue.findMany({
-    where: { status: params.status },
-  });
-  console.log(params.status);
-
+const IssuesPage = async ({params}:{params:}) => {
+  const issues = await prisma.issue.findMany();
   await delay(1000);
   return (
     <div className="px-2 mx-2">
