@@ -1,6 +1,4 @@
 import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
   DoubleArrowDownIcon,
   DoubleArrowLeftIcon,
   DoubleArrowRightIcon,
@@ -17,15 +15,13 @@ const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
   const pageCount = Math.ceil(itemCount / pageSize);
   if (pageCount <= 1) return null;
   return (
-    <Flex align="center" gap="2">
+    <Flex align="center" gap={}>
       <Text>
         Page {currentPage} of {pageCount}
       </Text>
-      <Button color="gray" variant="soft" disabled={pageCount === pageCount}>
-        <ChevronLeftIcon />
-      </Button>
-      <Button color="gray" variant="soft" disabled={pageCount === 1}>
-        <ChevronRightIcon />
+      <Button color="gray" variant="soft">
+        <DoubleArrowLeftIcon />
+        <DoubleArrowRightIcon />
       </Button>
     </Flex>
   );

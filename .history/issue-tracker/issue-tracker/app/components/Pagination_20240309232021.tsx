@@ -1,6 +1,4 @@
 import {
-  ChevronLeftIcon,
-  ChevronRightIcon,
   DoubleArrowDownIcon,
   DoubleArrowLeftIcon,
   DoubleArrowRightIcon,
@@ -21,11 +19,9 @@ const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
       <Text>
         Page {currentPage} of {pageCount}
       </Text>
-      <Button color="gray" variant="soft" disabled={pageCount === pageCount}>
-        <ChevronLeftIcon />
-      </Button>
-      <Button color="gray" variant="soft" disabled={pageCount === 1}>
-        <ChevronRightIcon />
+      <Button color="gray" variant="soft" disabled={cu}>
+        <DoubleArrowLeftIcon />
+        <DoubleArrowRightIcon />
       </Button>
     </Flex>
   );

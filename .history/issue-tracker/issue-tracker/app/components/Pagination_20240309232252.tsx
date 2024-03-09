@@ -22,10 +22,10 @@ const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
         Page {currentPage} of {pageCount}
       </Text>
       <Button color="gray" variant="soft" disabled={pageCount === pageCount}>
-        <ChevronLeftIcon />
+        <ChevronRightIcon />
       </Button>
       <Button color="gray" variant="soft" disabled={pageCount === 1}>
-        <ChevronRightIcon />
+        <ChevronLeftIcon />
       </Button>
     </Flex>
   );
