@@ -38,7 +38,7 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
             .patch(`/api/issues/${issue.id}/edit`, {
               assignedToUserId,
             })
-            .catch((error) => toast.error("error"));
+            .catch((error) => toast.error(error));
         }}>
         <Select.Trigger placeholder="Assign Issue..." />
         <Select.Content>

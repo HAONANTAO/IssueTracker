@@ -35,10 +35,10 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
         onValueChange={async (userId) => {
           const assignedToUserId = userId === "null" ? null : userId;
           await axios
-            .patch(`/api/issues/${issue.id}/edit`, {
+            .patch(`/sapi/issues/${issue.id}/edit`, {
               assignedToUserId,
             })
-            .catch((error) => toast.error("error"));
+            .catch((error) => toast.error(error));
         }}>
         <Select.Trigger placeholder="Assign Issue..." />
         <Select.Content>

@@ -29,33 +29,32 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
   //   getUsers();
   // }, []);
   return (
-    <>
-      <Select.Root
-        defaultValue={issue.assignedToUserId || "null"}
-        onValueChange={async (userId) => {
-          const assignedToUserId = userId === "null" ? null : userId;
-          await axios
-            .patch(`/api/issues/${issue.id}/edit`, {
-              assignedToUserId,
-            })
-            .catch((error) => toast.error("error"));
-        }}>
-        <Select.Trigger placeholder="Assign Issue..." />
-        <Select.Content>
-          <Select.Group>
-            <Select.Label>Members</Select.Label>
-            <Select.Item value="null">Unassigned</Select.Item>
-            {users?.map((u) => (
-              <Select.Item key={u.id} value={u.id}>
-                {u.name}
-              </Select.Item>
-            ))}
-          </Select.Group>
-          <Select.Separator />
-        </Select.Content>
-      </Select.Root>
-      <Toaster></Toaster>
-    </>
+    <Select.Root
+      defaultValue={issue.assignedToUserId || "null"}
+      onValueChange={async (userId) => {
+        const assignedToUserId = userId === "null" ? null : userId;
+        await axios
+          .patch(`/api/issues/${issue.id}/edit`, {
+            assignedToUserId,
+          })
+          .catch((error) => toast.error(error));
+      }}>
+      <Select.Trigger placeholder="Assign Issue..." />
+      <Select.Content>
+        <Select.Group>
+          <Select.Label>Members</Select.Label>
+          <Select.Item value="null">Unassigned</Select.Item>
+          {users?.map((u) => (
+            <Select.Item key={u.id} value={u.id}>
+              {u.name}
+            </Select.Item>
+          ))}
+        </Select.Group>
+        <Select.Separator />
+      </Select.Content>
+    </Select.Root>
+    <Toaster></Toaster>
+    <></>
   );
 };
 
