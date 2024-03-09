@@ -44,6 +44,7 @@ const IssueTable = async ({ searchParams }: Props) => {
     ? searchParams.status
     : undefined;
 
+    export 
   const issues = await prisma.issue.findMany({
     where: { status },
     orderBy,

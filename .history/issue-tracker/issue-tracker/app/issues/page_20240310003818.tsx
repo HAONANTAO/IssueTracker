@@ -2,12 +2,13 @@ import prisma from "@/prisma/client";
 
 import delay from "delay";
 
-import { IssueQuery } from "@/app/issues/list/IssueTable";
+import { Status } from "@prisma/client";
 import Pagination from "../components/Pagination";
 import NewIssueButton from "./NewIssueButton";
 import IssueTable from "./list/IssueTable";
+import QueryProps from "@/app/issues/"
 interface Props {
-  searchParams: IssueQuery;
+  searchParams: QueryProps;
 }
 
 const IssuesPage = async ({ searchParams }: Props) => {

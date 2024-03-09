@@ -14,13 +14,13 @@ import {
 } from "@radix-ui/themes";
 import Link from "next/link";
 
-export interface IssueQuery {
+export interface QueryProps {
   status: Status;
   orderBy: string;
   page: string;
 }
 interface Props {
-  searchParams: IssueQuery;
+  searchParams: QueryProps;
 }
 
 const IssueTable = async ({ searchParams }: Props) => {

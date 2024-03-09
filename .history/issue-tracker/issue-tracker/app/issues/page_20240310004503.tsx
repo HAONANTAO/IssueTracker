@@ -2,10 +2,10 @@ import prisma from "@/prisma/client";
 
 import delay from "delay";
 
-import { IssueQuery } from "@/app/issues/list/IssueTable";
 import Pagination from "../components/Pagination";
 import NewIssueButton from "./NewIssueButton";
 import IssueTable from "./list/IssueTable";
+import { IssueQuery } from "@/app/issues/list/IssueTable";
 interface Props {
   searchParams: IssueQuery;
 }

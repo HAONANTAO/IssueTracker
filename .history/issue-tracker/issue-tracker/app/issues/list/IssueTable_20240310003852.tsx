@@ -20,7 +20,7 @@ export interface IssueQuery {
   page: string;
 }
 interface Props {
-  searchParams: IssueQuery;
+  searchParams: QueryProps;
 }
 
 const IssueTable = async ({ searchParams }: Props) => {

@@ -40,9 +40,10 @@ const IssueTable = async ({ searchParams }: Props) => {
   //self-given
   const pageSize = 10;
   const allowedStatus = ["IN_PROGRESS", "CLOSED", "OPEN"];
-  const status = allowedStatus.includes(searchParams.status)
+  export const status = allowedStatus.includes(searchParams.status)
     ? searchParams.status
     : undefined;
+
 
   const issues = await prisma.issue.findMany({
     where: { status },
@@ -87,3 +88,4 @@ const IssueTable = async ({ searchParams }: Props) => {
 };
 
 export default IssueTable;
+export status;

@@ -2,20 +2,16 @@ import prisma from "@/prisma/client";
 
 import delay from "delay";
 
-import { IssueQuery } from "@/app/issues/list/IssueTable";
+import { Status } from "@prisma/client";
 import Pagination from "../components/Pagination";
 import NewIssueButton from "./NewIssueButton";
 import IssueTable from "./list/IssueTable";
+import { IssueQuery } from "@/app/issues/list/IssueTable";
 interface Props {
   searchParams: IssueQuery;
 }
 
 const IssuesPage = async ({ searchParams }: Props) => {
-  const allowedStatus = ["IN_PROGRESS", "CLOSED", "OPEN"];
-  const status = allowedStatus.includes(searchParams.status)
-    ? searchParams.status
-    : undefined;
-
   //self-given
   const pageSize = 10;
 
