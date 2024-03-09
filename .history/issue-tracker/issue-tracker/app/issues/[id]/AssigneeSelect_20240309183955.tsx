@@ -1,12 +1,12 @@
 "use client";
 import { Skeleton } from "@/app/components/Loading";
-import { Issue, User } from "@prisma/client";
+import { User } from "@prisma/client";
 import { Select } from "@radix-ui/themes";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 //use queryFn fetch data and store in cache!!!(client side)
-const AssigneeSelect = ({ issue }: { issue: Issue }) => {
+const AssigneeSelect = () => {
   const {
     data: users,
     error,
@@ -29,10 +29,7 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
   //   getUsers();
   // }, []);
   return (
-    <Select.Root
-      onValueChange={async (userId) => {
-        await axios.patch(`api/issues${issue.id}/edit`);
-      }}>
+    <Select.Root>
       <Select.Trigger placeholder="Assign Issue..." />
       <Select.Content>
         <Select.Group>

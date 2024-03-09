@@ -1,6 +1,6 @@
 "use client";
 import { Skeleton } from "@/app/components/Loading";
-import { Issue, User } from "@prisma/client";
+import { User } from "@prisma/client";
 import { Select } from "@radix-ui/themes";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
@@ -31,7 +31,7 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
   return (
     <Select.Root
       onValueChange={async (userId) => {
-        await axios.patch(`api/issues${issue.id}/edit`);
+        await axios.patch(`api/issues${userId}/edit`);
       }}>
       <Select.Trigger placeholder="Assign Issue..." />
       <Select.Content>

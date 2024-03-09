@@ -31,7 +31,7 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
   return (
     <Select.Root
       onValueChange={async (userId) => {
-        await axios.patch(`api/issues${issue.id}/edit`);
+        await axios.patch(`api/issues${userId}/edit`);
       }}>
       <Select.Trigger placeholder="Assign Issue..." />
       <Select.Content>
