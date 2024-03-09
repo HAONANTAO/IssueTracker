@@ -41,8 +41,6 @@ const IssuesPage = async ({ searchParams }: Props) => {
   const issues = await prisma.issue.findMany({
     where: { status },
     orderBy,
-    skip: (page - 1) * pageSize,
-    take: pageSize,
   });
   const issueCount = await prisma.issue.count({ where: { status } });
   await delay(1000);

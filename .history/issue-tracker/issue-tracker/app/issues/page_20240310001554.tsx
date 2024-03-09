@@ -38,6 +38,11 @@ const IssuesPage = async ({ searchParams }: Props) => {
     ? { [searchParams.orderBy]: "asc" }
     : undefined;
   const page = parseInt(searchParams.page);
+  if (isNaN(page) || page < 1) {
+    // 处理无效页码的情况，可以设置默认值或返回错误
+    return { error: "Invalid page number" };
+  }
+
   const issues = await prisma.issue.findMany({
     where: { status },
     orderBy,
@@ -81,11 +86,6 @@ const IssuesPage = async ({ searchParams }: Props) => {
           </TableBody>
         ))}
       </TableRoot>
-      <Pagination
-        pageSize={pageSize}
-        currentPage={page}
-        itemCount={issueCount}
-      />
     </div>
   );
 };

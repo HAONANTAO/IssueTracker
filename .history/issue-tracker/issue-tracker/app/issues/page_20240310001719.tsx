@@ -37,7 +37,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
   const orderBy = searchParams.orderBy
     ? { [searchParams.orderBy]: "asc" }
     : undefined;
-  const page = parseInt(searchParams.page);
+  const page =parseInt(searchParams.page)
   const issues = await prisma.issue.findMany({
     where: { status },
     orderBy,
@@ -83,7 +83,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
       </TableRoot>
       <Pagination
         pageSize={pageSize}
-        currentPage={page}
+        currentPage={parseInt(searchParams.page)}
         itemCount={issueCount}
       />
     </div>
