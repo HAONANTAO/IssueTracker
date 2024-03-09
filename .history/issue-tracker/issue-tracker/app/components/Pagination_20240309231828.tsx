@@ -21,7 +21,7 @@ const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
       </Text>
       <Button color="gray" variant="soft">
         <DoubleArrowLeftIcon />
-        <DoubleArrowRightIcon />
+        <DoubleArrowRightIcon />.
       </Button>
     </Flex>
   );

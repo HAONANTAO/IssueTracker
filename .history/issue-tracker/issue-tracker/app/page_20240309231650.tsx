@@ -3,6 +3,8 @@ import Pagination from "./components/Pagination";
 
 export default function Home() {
   return (
-    <Pagination itemCount={100} pageSize={50} currentPage={1}></Pagination>
+    <Flex>
+      <Pagination itemCount={100} pageSize={500} currentPage={1}></Pagination>
+    </Flex>
   );
 }

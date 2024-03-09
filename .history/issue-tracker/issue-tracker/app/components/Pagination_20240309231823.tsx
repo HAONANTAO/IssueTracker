@@ -1,8 +1,4 @@
-import {
-  DoubleArrowDownIcon,
-  DoubleArrowLeftIcon,
-  DoubleArrowRightIcon,
-} from "@radix-ui/react-icons";
+import { DoubleArrowDownIcon, DoubleArrowLeftIcon } from "@radix-ui/react-icons";
 import { Button, Flex, Text } from "@radix-ui/themes";
 import React from "react";
 
@@ -20,8 +16,8 @@ const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
         Page {currentPage} of {pageCount}
       </Text>
       <Button color="gray" variant="soft">
-        <DoubleArrowLeftIcon />
-        <DoubleArrowRightIcon />
+      <DoubleArrowLeftIcon/>
+      <DoubleA
       </Button>
     </Flex>
   );
