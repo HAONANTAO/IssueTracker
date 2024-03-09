@@ -49,14 +49,10 @@ const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
         color="gray"
         variant="soft"
         disabled={pageCount === pageCount}
-        onClick={() => changePage(currentPage + 1)}>
+        onClick={() => changePage(1)}>
         <ChevronRightIcon />
       </Button>
-      <Button
-        color="gray"
-        variant="soft"
-        disabled={pageCount === pageCount}
-        onClick={() => changePage(pageCount)}>
+      <Button color="gray" variant="soft" disabled={pageCount === pageCount}>
         <DoubleArrowRightIcon />
       </Button>
     </Flex>
