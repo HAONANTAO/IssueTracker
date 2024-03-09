@@ -27,7 +27,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
   return (
     <div className="px-2 mx-2">
       <NewIssueButton></NewIssueButton>
-      <IssueTable searchParams={searchParams}></IssueTable>
+      <IssueTable searchParams={searchParams} status={status}></IssueTable>
       <Pagination
         pageSize={pageSize}
         currentPage={page}

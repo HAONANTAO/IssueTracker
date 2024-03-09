@@ -1,10 +1,14 @@
 import prisma from "@/prisma/client";
 
 import delay from "delay";
+import SelfLink from "../components/SelfLink";
+import StatusBadge from "../components/StatusBadge";
 
-import { Status } from "@prisma/client";
-import Pagination from "../components/Pagination";
 import NewIssueButton from "./NewIssueButton";
+import { Issue, Status } from "@prisma/client";
+import Link from "next/link";
+import { ArrowUpIcon } from "@radix-ui/react-icons";
+import Pagination from "../components/Pagination";
 import IssueTable from "./list/IssueTable";
 
 interface Props {

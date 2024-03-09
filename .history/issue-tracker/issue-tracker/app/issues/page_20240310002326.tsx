@@ -1,11 +1,14 @@
 import prisma from "@/prisma/client";
 
 import delay from "delay";
+import SelfLink from "../components/SelfLink";
+import StatusBadge from "../components/StatusBadge";
 
-import { Status } from "@prisma/client";
-import Pagination from "../components/Pagination";
 import NewIssueButton from "./NewIssueButton";
-import IssueTable from "./list/IssueTable";
+import { Issue, Status } from "@prisma/client";
+import Link from "next/link";
+import { ArrowUpIcon } from "@radix-ui/react-icons";
+import Pagination from "../components/Pagination";
 
 interface Props {
   searchParams: { status: Status; orderBy: string; page: string };
@@ -27,7 +30,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
   return (
     <div className="px-2 mx-2">
       <NewIssueButton></NewIssueButton>
-      <IssueTable searchParams={searchParams}></IssueTable>
+      <IssueTable></IssueTable>
       <Pagination
         pageSize={pageSize}
         currentPage={page}

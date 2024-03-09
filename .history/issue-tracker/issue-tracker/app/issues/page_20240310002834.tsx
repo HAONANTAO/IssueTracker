@@ -12,11 +12,6 @@ interface Props {
 }
 
 const IssuesPage = async ({ searchParams }: Props) => {
-  const allowedStatus = ["IN_PROGRESS", "CLOSED", "OPEN"];
-  const status = allowedStatus.includes(searchParams.status)
-    ? searchParams.status
-    : undefined;
-
   //self-given
   const pageSize = 10;
 
