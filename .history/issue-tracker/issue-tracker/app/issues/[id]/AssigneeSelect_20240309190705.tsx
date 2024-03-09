@@ -34,7 +34,7 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
       onValueChange={async (userId) => {
         const assignedToUserId = userId === "null" ? null : userId;
         await axios.patch(`/api/issues/${issue.id}/edit`, {
-          assignedToUserId,
+          assignedToUserId: userId || null,
         });
       }}>
       <Select.Trigger placeholder="Assign Issue..." />
