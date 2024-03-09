@@ -18,14 +18,11 @@ const IssuesPage = async ({
 }: {
   searchParams: { status: Status };
 }) => {
-  const allowedStatus = ["IN_PROGRESS", "CLOSED", "OPEN"];
-  const status = allowedStatus.includes(searchParams.status)
-    ? searchParams.status
-    : undefined;
-
+  if (searchParams.status) const status = searchParams.status;
   const issues = await prisma.issue.findMany({
-    where: { status },
+    where: { status: searchParams.status },
   });
+  console.log(searchParams);
 
   await delay(1000);
   return (

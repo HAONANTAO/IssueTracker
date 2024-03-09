@@ -24,7 +24,7 @@ const IssuesPage = async ({
     : undefined;
 
   const issues = await prisma.issue.findMany({
-    where: { status },
+    where: { status: "" },
   });
 
   await delay(1000);
