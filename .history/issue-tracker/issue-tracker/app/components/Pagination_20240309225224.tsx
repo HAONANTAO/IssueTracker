@@ -1,4 +1,4 @@
-import { Flex, Text } from "@radix-ui/themes";
+import { Flex } from "@radix-ui/themes";
 import React from "react";
 
 interface Props {
@@ -7,13 +7,10 @@ interface Props {
   currentPage: number;
 }
 const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
-  const pageCount = Math.ceil(itemCount / pageSize);
-  if (pageCount < 1) return null;
+  const pageCount = itemCount/
   return (
     <Flex>
-      <Text>
-        Page {currentPage} of {pageCount}
-      </Text>
+      <Text>Page {currentPage}</Text>
     </Flex>
   );
 };

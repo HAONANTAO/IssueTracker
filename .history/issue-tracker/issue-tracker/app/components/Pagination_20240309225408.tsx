@@ -8,12 +8,10 @@ interface Props {
 }
 const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
   const pageCount = Math.ceil(itemCount / pageSize);
-  if (pageCount < 1) return null;
+  if(pageCount<1)
   return (
     <Flex>
-      <Text>
-        Page {currentPage} of {pageCount}
-      </Text>
+      <Text>Page {currentPage}</Text>
     </Flex>
   );
 };

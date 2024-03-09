@@ -11,9 +11,7 @@ const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
   if (pageCount < 1) return null;
   return (
     <Flex>
-      <Text>
-        Page {currentPage} of {pageCount}
-      </Text>
+      <Text>Page {currentPage}</Text>
     </Flex>
   );
 };
