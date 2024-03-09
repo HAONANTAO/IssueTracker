@@ -1,0 +1,8 @@
+import { Select } from "@radix-ui/themes";
+import React from "react";
+
+const IssueStatusFilter = () => {
+  return <Select.Root></Select.Root>;
+};
+
+export default IssueStatusFilter;
