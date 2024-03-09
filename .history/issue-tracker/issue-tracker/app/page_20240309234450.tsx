@@ -11,6 +11,6 @@ export default function Home({
     <Pagination
       itemCount={100}
       pageSize={5}
-      currentPage={parseInt(searchParams.page)}></Pagination>
+      currentPage={searchParams.page}></Pagination>
   );
 }
