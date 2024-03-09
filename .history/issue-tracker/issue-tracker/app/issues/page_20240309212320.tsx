@@ -15,17 +15,18 @@ import NewIssueButton from "./NewIssueButton";
 import { Issue, Status } from "@prisma/client";
 import Link from "next/link";
 
-interface Props {
-  searchParams: { status: Status };
-  orderBy: string;
-}
-
 const columns: { label: string; value: keyof Issue }[] = [
   { label: "Issue", value: "title" },
   { label: "Status", value: "status" },
   { label: "CreatedAt", value: "createdAt" },
 ];
-const IssuesPage = async ({ searchParams, orderBy }: Props) => {
+
+
+const IssuesPage = async ({
+  searchParams,orderby
+}: Props
+  ;
+}) => {
   const allowedStatus = ["IN_PROGRESS", "CLOSED", "OPEN"];
   const status = allowedStatus.includes(searchParams.status)
     ? searchParams.status
@@ -44,9 +45,7 @@ const IssuesPage = async ({ searchParams, orderBy }: Props) => {
           <TableRow>
             {columns.map((i) => (
               <TableColumnHeaderCell key={i.value}>
-                <Link href={{ query: { ...searchParams, orderBy: i.value } }}>
-                  {i.label}
-                </Link>
+                <Link href={{ ...sear}}> {i.label}</Link>
               </TableColumnHeaderCell>
             ))}
           </TableRow>
