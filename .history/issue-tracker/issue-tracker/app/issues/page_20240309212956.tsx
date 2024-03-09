@@ -25,7 +25,7 @@ const columns: { label: string; value: keyof Issue }[] = [
   { label: "Status", value: "status" },
   { label: "CreatedAt", value: "createdAt" },
 ];
-const IssuesPage = async ({ searchParams }: Props) => {
+const IssuesPage = async ({ searchParams, orderBy }: Props) => {
   const allowedStatus = ["IN_PROGRESS", "CLOSED", "OPEN"];
   const status = allowedStatus.includes(searchParams.status)
     ? searchParams.status

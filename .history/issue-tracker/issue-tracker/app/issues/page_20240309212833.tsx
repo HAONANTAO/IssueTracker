@@ -14,10 +14,10 @@ import StatusBadge from "../components/StatusBadge";
 import NewIssueButton from "./NewIssueButton";
 import { Issue, Status } from "@prisma/client";
 import Link from "next/link";
-import { ArrowUpIcon } from "@radix-ui/react-icons";
 
 interface Props {
-  searchParams: { status: Status; orderBy: string };
+  searchParams: { status: Status };
+  orderBy: string;
 }
 
 const columns: { label: string; value: keyof Issue }[] = [
@@ -25,7 +25,7 @@ const columns: { label: string; value: keyof Issue }[] = [
   { label: "Status", value: "status" },
   { label: "CreatedAt", value: "createdAt" },
 ];
-const IssuesPage = async ({ searchParams }: Props) => {
+const IssuesPage = async ({ searchParams, orderBy }: Props) => {
   const allowedStatus = ["IN_PROGRESS", "CLOSED", "OPEN"];
   const status = allowedStatus.includes(searchParams.status)
     ? searchParams.status
@@ -46,9 +46,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
               <TableColumnHeaderCell key={i.value}>
                 <Link href={{ query: { ...searchParams, orderBy: i.value } }}>
                   {i.label}
-                  {i.value === searchParams.orderBy && (
-                    <ArrowUpIcon className="inline"></ArrowUpIcon>
-                  )}
+                  <Arrow
                 </Link>
               </TableColumnHeaderCell>
             ))}
