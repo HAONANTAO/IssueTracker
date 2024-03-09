@@ -7,14 +7,16 @@ import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 //use queryFn fetch data and store in cache!!!(client side)
 const AssigneeSelect = ({ issue }: { issue: Issue }) => {
-  const useUsers = () =>
-    useQuery<User[]>({
-      queryKey: ["users"],
-      queryFn: () => axios.get("/api/users").then((res) => res.data),
-      staleTime: 60 * 1000, //60s
-      retry: 3, // up to 3 times
-    });
-  const { data: users, error, isLoading } = useUsers();
+  const {
+    data: users,
+    error,
+    isLoading,
+  } = useQuery<User[]>({
+    queryKey: ["users"],
+    queryFn: () => axios.get("/api/users").then((res) => res.data),
+    staleTime: 60 * 1000, //60s
+    retry: 3, // up to 3 times
+  });
   if (isLoading) return <Skeleton></Skeleton>;
   if (error) return null;
   // const [users, setUsers] = useState<User[]>([]);
