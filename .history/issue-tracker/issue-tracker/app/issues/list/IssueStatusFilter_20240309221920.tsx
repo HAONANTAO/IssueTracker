@@ -23,7 +23,7 @@ const IssueStatusFilter = () => {
         if (status) params.append("status", status);
         if (orderByparams) params.append("orderBy", orderByparams);
 
-        router.push("/issues?" + params);
+        router.push("/issues/" + params);
       }}>
       <Select.Trigger placeholder="filter by status ..." />
       <Select.Content>
