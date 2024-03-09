@@ -14,10 +14,10 @@ import StatusBadge from "../components/StatusBadge";
 import NewIssueButton from "./NewIssueButton";
 import { Issue, Status } from "@prisma/client";
 
-const columns: { label: string; value: keyof Issue }[] = [
-  { label: "Issue", value: "title" },
-  { label: "Status", value: "status" },
-  { label: "CreatedAt", value: "createdAt" },
+const columns: { label: String; value: keyof Issue } = [
+  { label: "Issue", value: "Title" },
+  { label: "Status", value: "Status" },
+  { label: "CreateAt", value: "CreateAt" },
 ];
 const IssuesPage = async ({
   searchParams,
@@ -41,8 +41,8 @@ const IssuesPage = async ({
         <TableHeader>
           <TableRow>
             {columns.map((i) => (
-              <TableColumnHeaderCell key={i.value}>
-                {i.label}
+              <TableColumnHeaderCell key={i.label}>
+                {i.value}
               </TableColumnHeaderCell>
             ))}
           </TableRow>

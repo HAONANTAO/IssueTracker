@@ -12,13 +12,11 @@ import SelfLink from "../components/SelfLink";
 import StatusBadge from "../components/StatusBadge";
 
 import NewIssueButton from "./NewIssueButton";
-import { Issue, Status } from "@prisma/client";
+import { Status } from "@prisma/client";
 
-const columns: { label: string; value: keyof Issue }[] = [
-  { label: "Issue", value: "title" },
-  { label: "Status", value: "status" },
-  { label: "CreatedAt", value: "createdAt" },
-];
+const columns =[
+  {label:"Issue",value=""}
+]
 const IssuesPage = async ({
   searchParams,
 }: {
@@ -40,11 +38,14 @@ const IssuesPage = async ({
       <TableRoot variant="surface">
         <TableHeader>
           <TableRow>
-            {columns.map((i) => (
-              <TableColumnHeaderCell key={i.value}>
-                {i.label}
-              </TableColumnHeaderCell>
-            ))}
+            <TableColumnHeaderCell>Issue</TableColumnHeaderCell>
+
+            <TableColumnHeaderCell className="hidden md:table-cell">
+              Status
+            </TableColumnHeaderCell>
+            <TableColumnHeaderCell className="hidden md:table-cell">
+              CreateAt
+            </TableColumnHeaderCell>
           </TableRow>
         </TableHeader>
         {issues.map((i) => (

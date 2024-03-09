@@ -41,7 +41,7 @@ const IssuesPage = async ({
         <TableHeader>
           <TableRow>
             {columns.map((i) => (
-              <TableColumnHeaderCell key={i.value}>
+              <TableColumnHeaderCell key={i.label}>
                 {i.label}
               </TableColumnHeaderCell>
             ))}

@@ -17,7 +17,7 @@ import { Issue, Status } from "@prisma/client";
 const columns: { label: string; value: keyof Issue }[] = [
   { label: "Issue", value: "title" },
   { label: "Status", value: "status" },
-  { label: "CreatedAt", value: "createdAt" },
+  { label: "CreateAt", value: "createdAt" },
 ];
 const IssuesPage = async ({
   searchParams,
@@ -41,8 +41,8 @@ const IssuesPage = async ({
         <TableHeader>
           <TableRow>
             {columns.map((i) => (
-              <TableColumnHeaderCell key={i.value}>
-                {i.label}
+              <TableColumnHeaderCell key={i.label}>
+                {i.value}
               </TableColumnHeaderCell>
             ))}
           </TableRow>
