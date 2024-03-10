@@ -14,10 +14,5 @@ export default async function Home() {
   const closed = await prisma.issue.count({
     where: { status: "CLOSED" },
   });
-  return (
-    <IssueSummary
-      open={open}
-      inProgress={inProgress}
-      closed={closed}></IssueSummary>
-  );
+  return <IssueSummary open inProgress closed={3}></IssueSummary>;
 }

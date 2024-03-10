@@ -9,15 +9,10 @@ export default async function Home() {
     where: { status: "OPEN" },
   });
   const inProgress = await prisma.issue.count({
-    where: { status: "IN_PROGRESS" },
+    where: { status: "OPEN" },
   });
   const closed = await prisma.issue.count({
     where: { status: "CLOSED" },
   });
-  return (
-    <IssueSummary
-      open={open}
-      inProgress={inProgress}
-      closed={closed}></IssueSummary>
-  );
+  return <IssueSummary open={10} inProgress={5} closed={3}></IssueSummary>;
 }

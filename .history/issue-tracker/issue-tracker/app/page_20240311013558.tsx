@@ -15,9 +15,6 @@ export default async function Home() {
     where: { status: "CLOSED" },
   });
   return (
-    <IssueSummary
-      open={open}
-      inProgress={inProgress}
-      closed={closed}></IssueSummary>
+    <IssueSummary open={open} inProgress={inProgress} closed></IssueSummary>
   );
 }
