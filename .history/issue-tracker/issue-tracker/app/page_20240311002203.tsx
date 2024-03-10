@@ -1,8 +1,12 @@
 import Image from "next/image";
 import Pagination from "./components/Pagination";
 import { useSearchParams } from "next/navigation";
-import LatestIssues from "./LatestIssues";
 
 export default function Home() {
-  return <LatestIssues></LatestIssues>;
+  return (
+    <Pagination
+      itemCount={100}
+      pageSize={5}
+      currentPage={parseInt(searchParams.page)}></Pagination>
+  );
 }
