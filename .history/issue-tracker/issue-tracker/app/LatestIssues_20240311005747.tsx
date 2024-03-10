@@ -8,7 +8,7 @@ const LatestIssues = async () => {
     orderBy: { createdAt: "desc" },
     take: 5,
     include: {
-      assignedToUser: true,
+     ass: true,
     },
   });
   prisma;
@@ -25,11 +25,7 @@ const LatestIssues = async () => {
                     <Link href={`/issues/${i.id}`}>{i.title}</Link>
                     <StatusBadge status={i.status}></StatusBadge>
                   </Flex>
-                  <Avatar
-                    src={i.assignedToUser?.image!}
-                    fallback="???"
-                    radius="full"
-                    size="2"></Avatar>
+                  <Avatar src={i.assignedToUser?.image!} fallback="?"></Avatar>
                 </Flex>
               </Table.Cell>
             </Table.Row>

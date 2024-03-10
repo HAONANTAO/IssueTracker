@@ -1,0 +1,13 @@
+import { Flex } from "@radix-ui/themes";
+import React from "react";
+
+interface Props {
+  open: number;
+  inProgress: number
+}
+const IssueSummary = () => {
+  const statuses = [];
+  return <Flex></Flex>;
+};
+
+export default IssueSummary;

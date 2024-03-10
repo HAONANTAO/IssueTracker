@@ -26,8 +26,8 @@ const LatestIssues = async () => {
                     <StatusBadge status={i.status}></StatusBadge>
                   </Flex>
                   <Avatar
-                    src={i.assignedToUser?.image!}
-                    fallback="???"
+                    src={i.assignedToUser?.image}
+                    fallback=
                     radius="full"
                     size="2"></Avatar>
                 </Flex>

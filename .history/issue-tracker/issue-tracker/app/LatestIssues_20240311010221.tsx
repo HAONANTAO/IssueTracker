@@ -25,11 +25,8 @@ const LatestIssues = async () => {
                     <Link href={`/issues/${i.id}`}>{i.title}</Link>
                     <StatusBadge status={i.status}></StatusBadge>
                   </Flex>
-                  <Avatar
-                    src={i.assignedToUser?.image!}
-                    fallback="???"
-                    radius="full"
-                    size="2"></Avatar>
+                  <Avatar src={i.assignedToUser?.image!} fallback="?"
+                  radi></Avatar>
                 </Flex>
               </Table.Cell>
             </Table.Row>
