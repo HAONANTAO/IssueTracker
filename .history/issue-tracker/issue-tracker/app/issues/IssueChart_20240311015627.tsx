@@ -16,6 +16,15 @@ const IssueChart = ({ open, inProgress, closed }: Props) => {
   ];
   return (
     <Card>
+      <ResponsiveContainer width="100%" height="300">
+        <BarChart data={data}>
+          <XAxis dataKey="label"></XAxis>
+          <YAxis></YAxis>
+          <Bar dataKey="value"></Bar>
+        </BarChart>
+      </ResponsiveContainer>
+    </Card>
+    <Card>
       <ResponsiveContainer width="100%" height={300}>
         <BarChart data={data}>
           <XAxis dataKey="label" />
@@ -23,7 +32,7 @@ const IssueChart = ({ open, inProgress, closed }: Props) => {
           <Bar
             dataKey="value"
             barSize={60}
-            style={{ fill: "var(--accent-9)" }}
+            style={{ fill: 'var(--accent-9)' }}
           />
         </BarChart>
       </ResponsiveContainer>

@@ -19,6 +19,6 @@ export default async function Home() {
     <IssueChart
       open={open}
       inProgress={inProgress}
-      closed={closed}></IssueChart>
+      closed={closed}></IssueC>
   );
 }
