@@ -20,7 +20,7 @@ export default async function Home() {
       }),
     };
   };
-  const { open, inProgress, closed } = await getProps();
+  const { open, inProgress, closed } = await getCounts(whereCondition);
   return (
     <Grid columns={{ initial: "1", md: "2" }} gap="5">
       <Flex direction="column" gap="5">

@@ -20,7 +20,6 @@ export default async function Home() {
       }),
     };
   };
-  const { open, inProgress, closed } = await getProps();
   return (
     <Grid columns={{ initial: "1", md: "2" }} gap="5">
       <Flex direction="column" gap="5">
