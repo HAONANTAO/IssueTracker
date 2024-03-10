@@ -16,7 +16,7 @@ const LatestIssues = async () => {
             <Table.Cell>
               <Flex direction="column">
                 <Link href={`/issues/${i.id}`}>{i.title}</Link>
-                <StatusBadge status={i.status}></StatusBadge>
+                <StatusBadge status={"OPEN"}></StatusBadge>
               </Flex>
             </Table.Cell>
           </Table.Row>

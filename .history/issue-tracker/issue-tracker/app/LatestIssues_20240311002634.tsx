@@ -1,7 +1,6 @@
 import React from "react";
 import prisma from "@/prisma/client";
 import { Flex, Link, Table } from "@radix-ui/themes";
-import StatusBadge from "./components/StatusBadge";
 const LatestIssues = async () => {
   const issues = await prisma.issue.findMany({
     orderBy: { createdAt: "desc" },
@@ -14,9 +13,8 @@ const LatestIssues = async () => {
         {issues.map((i) => (
           <Table.Row key={i.id}>
             <Table.Cell>
-              <Flex direction="column">
-                <Link href={`/issues/${i.id}`}>{i.title}</Link>
-                <StatusBadge status={i.status}></StatusBadge>
+              <Flex direction={col}>
+                <Link></Link>
               </Flex>
             </Table.Cell>
           </Table.Row>
