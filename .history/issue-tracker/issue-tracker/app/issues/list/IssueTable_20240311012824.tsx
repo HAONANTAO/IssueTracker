@@ -16,11 +16,12 @@ import Link from "next/link";
 
 export interface IssueQuery {
   status: Status;
-  orderBy: keyof Issue;
+  orderBy: keyof issue;
   page: string;
 }
 interface Props {
   searchParams: IssueQuery;
+  issues: Issue[]
 }
 
 const IssueTable = async ({ searchParams }: Props) => {
@@ -33,23 +34,13 @@ const IssueTable = async ({ searchParams }: Props) => {
       className: "hidden md:table cell",
     },
   ];
-  const orderBy = searchParams.orderBy
-    ? { [searchParams.orderBy]: "asc" }
-    : undefined;
-  const page = parseInt(searchParams.page) || 1;
-  //self-given
-  const pageSize = 10;
+ 
   const allowedStatus = ["IN_PROGRESS", "CLOSED", "OPEN"];
   const status = allowedStatus.includes(searchParams.status)
     ? searchParams.status
     : undefined;
 
-  const issues = await prisma.issue.findMany({
-    where: { status },
-    orderBy,
-    skip: (page - 1) * pageSize,
-    take: pageSize,
-  });
+  
   return (
     <TableRoot variant="surface">
       <TableHeader>

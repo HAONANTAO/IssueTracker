@@ -16,7 +16,7 @@ import Link from "next/link";
 
 export interface IssueQuery {
   status: Status;
-  orderBy: keyof Issue;
+  orderBy: string;
   page: string;
 }
 interface Props {
@@ -44,12 +44,6 @@ const IssueTable = async ({ searchParams }: Props) => {
     ? searchParams.status
     : undefined;
 
-  const issues = await prisma.issue.findMany({
-    where: { status },
-    orderBy,
-    skip: (page - 1) * pageSize,
-    take: pageSize,
-  });
   return (
     <TableRoot variant="surface">
       <TableHeader>

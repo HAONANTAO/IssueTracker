@@ -5,5 +5,5 @@ import LatestIssues from "./LatestIssues";
 import IssueSummary from "./IssueSummary";
 
 export default function Home() {
-  return <IssueSummary open={10} inProgress={5} closed={3}></IssueSummary>;
+  return <IssueSummary open={0} inProgress={0} closed={0}></IssueSummary>;
 }

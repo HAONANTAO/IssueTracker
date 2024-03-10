@@ -23,8 +23,8 @@ const IssueSummary = ({ open, inProgress, closed }: Props) => {
       {statuses.map((s) => (
         <Card key={s.label}>
           <Flex direction="column">
-            <Link href={`/issues?status=${s.status}`}>{s.label}</Link>
-            <Text>{s.value}</Text>
+            <Link href={`/issues/`}>{s.label}</Link>
+            <Text></Text>
           </Flex>
         </Card>
       ))}

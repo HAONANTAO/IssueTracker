@@ -44,12 +44,6 @@ const IssueTable = async ({ searchParams }: Props) => {
     ? searchParams.status
     : undefined;
 
-  const issues = await prisma.issue.findMany({
-    where: { status },
-    orderBy,
-    skip: (page - 1) * pageSize,
-    take: pageSize,
-  });
   return (
     <TableRoot variant="surface">
       <TableHeader>
