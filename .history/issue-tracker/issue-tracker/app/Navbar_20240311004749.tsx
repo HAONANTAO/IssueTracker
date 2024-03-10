@@ -55,7 +55,7 @@ const RenderLink = () => {
 };
 const Profile = () => {
   const { status, data: session } = useSession();
-  console.log(status);
+
   if (status === "loading")
     return <Skeleton width="3rem" height="2rem"></Skeleton>;
   if (status === "unauthenticated")
@@ -66,7 +66,7 @@ const Profile = () => {
       <DropdownMenu.Root>
         <DropdownMenu.Trigger>
           <Avatar
-            src={session!.user!.image!}
+            src={session.user!.image!}
             fallback="?"
             size="3"
             radius="full"

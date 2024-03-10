@@ -20,12 +20,12 @@ const LatestIssues = async () => {
           {issues.map((i) => (
             <Table.Row key={i.id}>
               <Table.Cell>
-                <Flex justify="between">
+                <Flex>
                   <Flex direction="column" align="start" gap="2">
                     <Link href={`/issues/${i.id}`}>{i.title}</Link>
                     <StatusBadge status={i.status}></StatusBadge>
                   </Flex>
-                  <Avatar src={i.assignedToUser?.image!} fallback="?"></Avatar>
+                  <Avatar fallback={""}></Avatar>
                 </Flex>
               </Table.Cell>
             </Table.Row>

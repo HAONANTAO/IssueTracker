@@ -55,7 +55,8 @@ const RenderLink = () => {
 };
 const Profile = () => {
   const { status, data: session } = useSession();
-  console.log(status);
+
+  
   if (status === "loading")
     return <Skeleton width="3rem" height="2rem"></Skeleton>;
   if (status === "unauthenticated")
