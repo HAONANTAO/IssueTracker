@@ -1,19 +1,30 @@
-# ProjectName
+# Issue Tracker
 
-ProjectName and Description
+The issue tracker is mainly used to generate issues and assign them to specific people and then has three states: open, in progress, and closed, and it has functions for adding, deleting, changing, querying, and visualisation.
 
-<!-- PROJECT SHIELDS -->
+Use NextJs, and TailWindCss with RadixUI to build the issue tracker web Application.
+
+Prisma with Mysql as the database, functional with create, delete, edit
+
+Also, use next-auth to do the Google account auth,
+
+use Zod as the validation check,
+
+use recharts as the visualization display
+
+use react-hot-toast as the error alert
+
+use hook-form to manage the form status
 
 [![LinkedIn][linkedin-shield]][www.linkedin.com/in/haonan-tao-aaron]
 
-<!-- PROJECT LOGO -->
+
 <br />
 
 <p align="center">
   <a href="https://github.com/shaojintian/Best_README_template/">
-    <img src="Home.png" alt="Logo" width="80" height="80">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
-
 
 
 </p>
@@ -30,7 +41,7 @@ ProjectName and Description
 - [Deployment](#Deployment)
 - [Skills](#Skills)
 - [Contributor](#Contributor)
-  - Open Source
+  - [Open Source](#Open Source)
 - [Version Control](#Version Control)
 - [Author](#Author)
 - [External Links](#External Links)
@@ -44,7 +55,7 @@ ProjectName and Description
 Clone the repo
 
 ```sh
-git clone https://github.com/shaojintian/Best_README_template.git
+https://github.com/HAONANTAO/IssueTracker.git
 ```
 
 
@@ -54,42 +65,128 @@ git clone https://github.com/shaojintian/Best_README_template.git
 
 
 ```
-filetree 
-├── ARCHITECTURE.md
-├── LICENSE.txt
+issue-tracker
 ├── README.md
-├── /account/
-├── /bbs/
-├── /docs/
-│  ├── /rules/
-│  │  ├── backend.txt
-│  │  └── frontend.txt
-├── manage.py
-├── /oa/
-├── /static/
-├── /templates/
-├── useless.md
-└── /util/
+├── .env
+├── .eslintrc.json
+├── .gitignore
+├── middleware.ts
+├── next.config.mjs
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── tailwind.config.ts
+├── tsconfig.json
+├── LICENSE
+├── prisma
+│  ├── migrations
+│  ├── client.ts
+│  ├── schema.prisma
+├── app
+│  ├── api
+│  ├── ├── auth/[...nextauth]
+│  ├── ├── ├── route.tsx
+
+│  ├── ├── issues
+│  ├── ├── ├── route.tsx
+│  ├── ├── ├── [id]
+│  ├── ├── ├── ├── edit
+│  ├── ├── ├── ├── ├── route.tsx
+│  ├── ├── ├── ├── route.tsx
+
+│  ├── ├── users
+│  ├── ├── ├── route.tsx
+
+│  ├── auth
+│  ├── ├── AuthOptions.ts
+│  ├── ├── Provider.tsx
+
+│  ├── components
+│  ├── ├── DeletePageButoon.tsx
+│  ├── ├── EditPageButton.tsx
+│  ├── ├── ErrorMessage.tsx
+│  ├── ├── IssueDetails.tsx
+│  ├── ├── IssueForm.tsx
+│  ├── ├── IssueFormSkeleton.tsx
+│  ├── ├── Loading.ts
+│  ├── ├── Pagination.tsx
+│  ├── ├── SelfLink.tsx
+│  ├── ├── Spinner.tsx
+│  ├── ├── StatusBadge.tsx
+
+
+│  ├── issues
+│  ├── ├── [id]
+│  ├── ├── ├── edit
+│  ├── ├── ├── ├── loading.tsx
+│  ├── ├── ├── ├── page.tsx
+│  ├── ├── ├── AssigneeSelect.tsx
+│  ├── ├── ├── loading.tsx
+│  ├── ├── ├── page.tsx
+
+│  ├── ├── list
+│  ├── ├── ├── IssueStatusFilter.tsx
+│  ├── ├── ├── IssueTable.tsx
+│  ├── ├── IssueChart.tsx
+│  ├── ├── NewIssueButton.tsx
+│  ├── ├── loading.tsx
+│  ├── ├── page.tsx
+
+│  ├── newIssue
+│  ├── ├── loading.tsx
+│  ├── ├── page.tsx
+
+│  ├── IssueSummary.tsx
+│  ├── LatestIssues.tsx
+│  ├── Navbar.tsx
+│  ├── QueryClientProvidet.tsx
+│  ├── ValidationSchema.tsx
+│  ├── favicon.ico
+│  ├── globals.css
+│  ├── layout.tsx
+│  ├── page.tsx
+│  ├── theme-config.css
+
 
 ```
 
 How to Use
 
+```
+npm i && npm run dev
+```
+
 
 
 ### Deployment
 
-暂无
+Not Yet
 
 
 
 ### Skills
 
-- [xxxxxxx](https://getbootstrap.com)
+- NextJs as the fullstack framework
 
-- [xxxxxxx](https://jquery.com)
+- TailWindCss 
 
-- [xxxxxxx](https://laravel.com)
+- RadixUI
+
+- prisma\
+
+- axios
+
+- next-auth
+
+- react-hot-toast
+
+- react-icons
+
+- react-loading-skeleton
+
+- recharts
+
+- zod
 
   
 
@@ -97,18 +194,15 @@ How to Use
 
 
 
-#### 如何参与开源项目
+#### Open Source
 
-贡献使开源社区成为一个学习、激励和创造的绝佳场所。你所作的任何贡献都是**非常感谢**的。
-
+Contributing makes the open-source community a great place to learn, inspire and create. Any contribution you make is **very much appreciated**!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-
 
 ### Version Control
 
@@ -118,46 +212,17 @@ How to Use
 
 ### Author
 
-xxx@xxxx
-
-知乎:xxxx  &ensp; qq:xxxxxx    
-
-
+HAONANTAO
 
 
 
 ### External Links
 
 
-- [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-
-- [Img Shields](https://shields.io)
-
-- [Choose an Open Source License](https://choosealicense.com)
-
-- [GitHub Pages](https://pages.github.com)
-
-- [Animate.css](https://daneden.github.io/animate.css)
-
-- [xxxxxxxxxxxxxx](https://connoratherton.com/loaders)
+- [Code With Mosh](#https://members.codewithmosh.com/courses/nextjs-projects-issue-tracker/lectures/49642701)
 
   
 
+
 <!-- links -->
-
-[your-project-path]:shaojintian/Best_README_template
-[contributors-shield]: https://img.shields.io/github/contributors/shaojintian/Best_README_template.svg?style=flat-square
-[contributors-url]: https://github.com/shaojintian/Best_README_template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/shaojintian/Best_README_template.svg?style=flat-square
-[forks-url]: https://github.com/shaojintian/Best_README_template/network/members
-[stars-shield]: https://img.shields.io/github/stars/shaojintian/Best_README_template.svg?style=flat-square
-[stars-url]: https://github.com/shaojintian/Best_README_template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/shaojintian/Best_README_template.svg?style=flat-square
-[issues-url]: https://img.shields.io/github/issues/shaojintian/Best_README_template.svg
-[license-shield]: https://img.shields.io/github/license/shaojintian/Best_README_template.svg?style=flat-square
-[license-url]: https://github.com/shaojintian/Best_README_template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/shaojintian
-
-
 
