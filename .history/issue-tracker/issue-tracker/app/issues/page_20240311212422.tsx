@@ -1,5 +1,7 @@
 import prisma from "@/prisma/client";
+
 import delay from "delay";
+
 import { IssueQuery } from "@/app/issues/list/IssueTable";
 import { Flex } from "@radix-ui/themes";
 import Pagination from "../components/Pagination";
@@ -17,7 +19,9 @@ const IssuesPage = async ({ searchParams }: Props) => {
 
   //self-given
   const pageSize = 10;
+
   const page = parseInt(searchParams.page);
+
   const issueCount = await prisma.issue.count({ where: { status } });
   await delay(1000);
   return (
