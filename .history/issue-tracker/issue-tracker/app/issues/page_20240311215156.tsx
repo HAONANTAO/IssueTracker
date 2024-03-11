@@ -17,7 +17,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
 
   //self-given
   const pageSize = 10;
-  const page = parseInt(searchParams.page) || 1;
+  const page = parseInt(searchParams.page);
   const issueCount = await prisma.issue.count({ where: { status } });
   await delay(1000);
   return (

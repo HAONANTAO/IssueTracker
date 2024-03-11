@@ -14,8 +14,7 @@ const DeletePageButton = ({ issueDetails }: { issueDetails: Issue }) => {
   const [deleting, setDeleting] = useState(false);
   const handleDelete = async () => {
     try {
-      // throw new Error();
-      setDeleting(true);
+      // throw new Error();setDeleting(true);
       await delay(1000);
       await axios.delete(`/api/issues/${issueDetails.id}`);
 

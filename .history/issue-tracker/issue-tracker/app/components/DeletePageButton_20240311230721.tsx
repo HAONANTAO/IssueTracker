@@ -15,10 +15,10 @@ const DeletePageButton = ({ issueDetails }: { issueDetails: Issue }) => {
   const handleDelete = async () => {
     try {
       // throw new Error();
-      setDeleting(true);
       await delay(1000);
       await axios.delete(`/api/issues/${issueDetails.id}`);
 
+      setDeleting(true);
       router.push("/issues");
       router.refresh();
     } catch (error) {

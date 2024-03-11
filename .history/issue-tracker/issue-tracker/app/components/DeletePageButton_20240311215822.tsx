@@ -14,11 +14,11 @@ const DeletePageButton = ({ issueDetails }: { issueDetails: Issue }) => {
   const [deleting, setDeleting] = useState(false);
   const handleDelete = async () => {
     try {
+      
       // throw new Error();
-      setDeleting(true);
-      await delay(1000);
+      await delay(3000);
       await axios.delete(`/api/issues/${issueDetails.id}`);
-
+      setDeleting(true);
       router.push("/issues");
       router.refresh();
     } catch (error) {
@@ -61,7 +61,7 @@ const DeletePageButton = ({ issueDetails }: { issueDetails: Issue }) => {
       </AlertDialog.Root>
       <AlertDialog.Root open={error}>
         <AlertDialog.Content style={{ maxWidth: 450 }}>
-          <AlertDialog.Title>Error Occurred </AlertDialog.Title>
+          <AlertDialog.Title>Confirm to Delete </AlertDialog.Title>
           <AlertDialog.Description size="2">
             Can not delete this issue!
           </AlertDialog.Description>
