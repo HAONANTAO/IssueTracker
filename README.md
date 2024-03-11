@@ -1,5 +1,5 @@
 # Issue Tracker
-[![LinkedIn][linkedin-shield]][www.linkedin.com/in/haonan-tao-aaron]
+
 
 The issue tracker is mainly used to generate issues and assign them to specific people and then has three states: open, in progress, and closed, and it has functions for adding, deleting, changing, querying, and visualisation.
 
