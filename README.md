@@ -23,7 +23,7 @@ use hook-form to manage the form status
 
 <p align="center">
   <a href="https://github.com/shaojintian/Best_README_template/">
-    <img src="Home.png" alt="Logo" width="200" height="300">
+    <img src="Home.png" alt="Logo" width="800" height="300">
   </a>
 
 
