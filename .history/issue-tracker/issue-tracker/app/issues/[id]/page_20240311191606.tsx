@@ -51,7 +51,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
 
 export default IssueDetailsPage;
 export async function generateMetadata({ params }: Props) {
-  const issue = await fetchUser(parseInt(params.id));
+  const issue = await fetchUser;
   return {
     title: issue?.title,
     description: "Details of issue" + issue?.id,

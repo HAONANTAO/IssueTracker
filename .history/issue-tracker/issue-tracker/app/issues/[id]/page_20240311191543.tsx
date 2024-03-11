@@ -26,7 +26,7 @@ const IssueDetailsPage = async ({ params }: Props) => {
   const session = await getServerSession(AuthOptions);
   await delay(2000);
   // if (typeof parseInt(params.id) !== "number") return notFound();
-  const issueDetails = await fetchUser(parseInt(params.id));
+  const issueDetails = await fetchUser;
   if (!issueDetails) return notFound();
 
   return (
@@ -51,7 +51,9 @@ const IssueDetailsPage = async ({ params }: Props) => {
 
 export default IssueDetailsPage;
 export async function generateMetadata({ params }: Props) {
-  const issue = await fetchUser(parseInt(params.id));
+  const issue = await prisma.issue.findUnique({
+    where: { id: parseInt(params.id) },
+  });
   return {
     title: issue?.title,
     description: "Details of issue" + issue?.id,
