@@ -5,7 +5,7 @@ import StatusBadge from "./StatusBadge";
 
 const IssueDetails = ({ issueDetails }: { issueDetails: Issue }) => {
   return (
-    <Box className="mx-2">
+    <Box className="">
       <Heading>{issueDetails.title}</Heading>
       <StatusBadge status={issueDetails.status}></StatusBadge>
       <Text>{issueDetails.updatedAt.toDateString()}</Text>
