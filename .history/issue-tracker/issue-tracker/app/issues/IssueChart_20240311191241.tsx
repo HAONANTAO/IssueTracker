@@ -34,6 +34,6 @@ const IssueChart = ({ open, inProgress, closed }: Props) => {
 
 export default IssueChart;
 export const metadata: Metadata = {
-  title: "Issue Tracker-All Issues",
-  description: "View a list of issues",
+  title: "Issue Tracker-Dashboard-AllIssues",
+  description: "View a summary of project issues",
 };

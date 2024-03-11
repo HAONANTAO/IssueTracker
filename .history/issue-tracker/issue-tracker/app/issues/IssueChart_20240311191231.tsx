@@ -1,6 +1,5 @@
 "use client";
 import { Card } from "@radix-ui/themes";
-import { Metadata } from "next";
 import React from "react";
 import { ResponsiveContainer, BarChart, XAxis, YAxis, Bar } from "recharts";
 interface Props {
@@ -34,6 +33,6 @@ const IssueChart = ({ open, inProgress, closed }: Props) => {
 
 export default IssueChart;
 export const metadata: Metadata = {
-  title: "Issue Tracker-All Issues",
-  description: "View a list of issues",
+  title: "Issue Tracker-Dashboard",
+  description: "View a summary of project issues",
 };
