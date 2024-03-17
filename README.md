@@ -208,9 +208,7 @@ Contributing makes the open-source community a great place to learn, inspire and
 5. Open a Pull Request
 
 ### Version Control
-
-该项目使用Git进行版本管理。您可以在repository参看当前可用版本。
-
+This project use Git as the project management.
 
 
 ### Author
